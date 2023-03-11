@@ -1,0 +1,1074 @@
+{
+  "postacie": [
+    {
+      "imie": "Diana",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 640,
+        "mana": 375,
+        "obrazeniaOdAtaku": 57,
+        "mocUmiejetnosci": 0,
+        "pancerz": 31,
+        "odpornoscNaMagie": 32,
+        "predkoscAtaku": 0.72,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 345
+      },
+      "skalowanie": {
+        "skalowanieHP" : 109,
+        "skalowanieMany" : 25,
+        "skalowanieAD": 3,
+        "skalowaniePancerz": 4.3,
+        "skalowanieMR": 2.05,
+        "skalowanieAS": 0.0217
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Cios półksiężyca",
+        "opis": "Tworzy pocisk księżycowej energii w kształcie łuku, zadając obrażenia magiczne. Trafieni wrogowie zostają naznaczeni Księżycową Poświatą, która ujawnia ich na 3 sek., o ile nie byli ukryci.",
+        "skalowanieMocyUmiejetnosci": 0.7,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 95,
+          "lvl3": 130,
+          "lvl4": 165,
+          "lvl5": 200
+        }
+      },
+      "umiejetnoscDruga": {
+        "nazwa": "Księżycowa kaskada",
+        "opis": "Diana tworzy trzy orbitujące kule, które wybuchają przy zetknięciu z wrogami, zadając obrażenia obszarowe. Otrzymuje także tymczasową tarczę pochłaniającą obrażenia. Jeśli jej trzecia kula wybuchnie, tarcza zostanie wzmocniona.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 54,
+          "lvl2": 90,
+          "lvl3": 126,
+          "lvl4": 162,
+          "lvl5": 198
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Lunarny skok",
+        "opis": "Staje się uosobieniem mściwego księżyca, doskakując do wroga i zadając obrażenia magiczne. Lunarny Skok nie ma czasu odnowienia, jeśli użyje się go do zaatakowania wroga naznaczonego Księżycową Poświatą. Efekt Księżycowej Poświaty zostanie usunięty ze wszystkich pozostałych wrogów niezależnie od tego, czy byli celem Lunarnego Skoku.",
+        "skalowanieMocyUmiejetnosci": 0.5,
+        "bazoweObrazenia": {
+          "lvl1": 50,
+          "lvl2": 70,
+          "lvl3": 90,
+          "lvl4": 110,
+          "lvl5": 130
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Zew księżyca",
+        "opis": "Diana ujawnia wszystkich pobliskich wrogów, przyciąga i spowalnia ich. Jeśli Diana przyciągnie co najmniej jednego wrogiego bohatera, po chwili opadnie na nią światło księżyca, zadając obrażenia magiczne na obszarze wokół niej. Obrażenia te zwiększają się za każdy dodatkowy przyciągnięty cel.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 200,
+          "lvl2": 300,
+          "lvl3": 400
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Ostrze księżycowej poświaty",
+        "opis": "Każde co trzecie uderzenie zadaje pobliskim wrogom dodatkowe obrażenia magiczne. Po rzuceniu zaklęcia prędkość ataku Diany zwiększa się na 3 następne ataki."
+      }
+    },
+    {
+      "imie": "Vex",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 590,
+        "mana": 490,
+        "obrazeniaOdAtaku": 54,
+        "mocUmiejetnosci": 0,
+        "pancerz": 23,
+        "odpornoscNaMagie": 28,
+        "predkoscAtaku": 0.669,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 335
+      },
+      "skalowanie": {
+        "skalowanieHP" : 104,
+        "skalowanieMany" : 32,
+        "skalowanieAD": 2.75,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Porywisty Pocisk",
+        "opis": "Vex wypuszcza do przodu falę, która zadaje magiczne obrażenia wrogom, przez których przeleci. Po chwili fala przyspiesza, ale zmniejsza się jej szerokość. Porywisty Pocisk wysadza Mrok na wszystkich oznaczonych wrogach, których trafi.",
+        "skalowanieMocyUmiejetnosci": 0.7,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 105,
+          "lvl3": 150,
+          "lvl4": 195,
+          "lvl5": 240
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Przestrzeń Osobista",
+        "opis":  "Vex zyskuje tarczę i emituje falę uderzeniową, zadając obrażenia magiczne wrogom wokół niej. Przestrzeń Osobista wysadza Mrok na wszystkich oznaczonych wrogach, których trafi",
+        "skalowanieMocyUmiejetnosci": 0.30,
+        "bazoweObrazenia": {
+          "lvl1": 80,
+          "lvl2": 120,
+          "lvl3": 160,
+          "lvl4": 200,
+          "lvl5": 240
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Otulająca Ciemność",
+        "opis": "Cień leci w wybrane miejsce, zwiększając swój rozmiar podczas lotu. Po dotarciu do celu Cień zadaje obrażenia magiczne, spowalnia i oznacza trafionych wrogów Mrokiem.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 50,
+          "lvl2": 70,
+          "lvl3": 90,
+          "lvl4": 110,
+          "lvl5": 130
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Wzbierający Cień",
+        "opis": "Cień leci do przodu, oznaczając i zadając obrażenia magiczne pierwszemu trafionemu wrogiemu bohaterowi. Następnie Vex może ponownie użyć tej umiejętności, aby Cień przyciągnął ją do oznaczonego celu, co zada mu dodatkowe obrażenia magiczne.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 225,
+          "lvl2": 375,
+          "lvl3": 525
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Zagłada i Mrok",
+        "opis": "Vex co jakiś czas zostaje wzmocniona przez Zagładę, przez co jej następna podstawowa umiejętność przerywa doskoki wrogów i przestrasza ich."
+      }},
+    {
+      "imie": "Xerath",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 596,
+        "mana": 459,
+        "obrazeniaOdAtaku": 55,
+        "mocUmiejetnosci": 0,
+        "pancerz": 22,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.625,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 340
+      },
+      "skalowanie": {
+        "skalowanieHP" : 106,
+        "skalowanieMany" : 22,
+        "skalowanieAD": 3,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+      "umiejetnoscPierwsza": {
+        "nazwa": "Arkanopuls",
+        "opis": "Xerath po krótkiej chwili wystrzeliwuje promień magicznej energii w linii prostej, który zadaje obrażenia magiczne wszystkim trafionym wrogom.",
+        "skalowanieMocyUmiejetnosci": 0.85,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 110,
+          "lvl3": 150,
+          "lvl4": 190,
+          "lvl5": 230
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Oko Zniszczenia",
+        "opis":  "Xerath przywołuje tajemniczą energię w wybranym miejscu, która po 0,5 sekundowym opóźnieniu wybucha i zadaje obrażenia magiczne wszystkim wrogom w obszarze oraz spowalnia ich o 25% na 2,5 sekundy.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 95,
+          "lvl3": 130,
+          "lvl4": 165,
+          "lvl5": 200
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Porażająca Kula",
+        "opis": "Xerath wystrzeliwuje kulę energii w linii prostej, która zadaje obrażenia magiczne pierwszej trafionej jednostce i ogłusza ją na 0,5 - 2 sekundy.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 80,
+          "lvl2": 110,
+          "lvl3": 140,
+          "lvl4": 170,
+          "lvl5": 200
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Tajemny Rytuał",
+        "opis": "Xerath unieruchamia siebie na maksymalnie 10 sekund i staje się odporny na efekty w powietrzu. Dodatkowo w czasie jego trwania zyskuje możliwość wielokrotnej aktywacji Ezoterycznego Ostrzału, lecz traci możliwość rzucania innych umiejętności.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 600,
+          "lvl2": 1000,
+          "lvl3": 1500
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Przypływ Many",
+        "opis": "Następny atak podstawowy Xeratha skierowany przeciwko wrogiej jednostce, przywróci mu przy trafieniu X pkt. many. Efekt podwojony w przypadku wrogich bohaterów."
+      }},
+    {
+      "imie": "Evelynn",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 642,
+        "mana": 315,
+        "obrazeniaOdAtaku": 61,
+        "mocUmiejetnosci": 0,
+        "pancerz": 37,
+        "odpornoscNaMagie": 32,
+        "predkoscAtaku": 0.667,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 335
+      },
+      "skalowanie": {
+        "skalowanieHP" : 98,
+        "skalowanieMany" : 42,
+        "skalowanieAD": 3,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 2.05,
+        "skalowanieAS": 0.0095
+      },
+      "umiejetnoscPierwsza": {
+        "nazwa": "Kolec Nienawiści",
+        "opis": "Wicie Evelynn uderzają w wybranym kierunku, zadając Ability power icon.png obrażenia magiczne pierwszej trafionej jednostce i sprawiają, że 3 następne zaklęcia lub ataki Evelynn przeciwko tej jednostce zadadzą dodatkowe obrażenia magicznych.",
+        "skalowanieMocyUmiejetnosci": 0.3,
+        "bazoweObrazenia": {
+          "lvl1": 65,
+          "lvl2": 85,
+          "lvl3": 105,
+          "lvl4": 125,
+          "lvl5": 145
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Pokuszenie",
+        "opis":  "Evelynn przeklina wybranego bohatera lub potwora na 5 sekund. Jeżeli Evelynn trafi cel za pomocą podstawowego ataku lub umiejętności, zużyje klątwę, odzyska jej koszt many i na krótko spowolni cel o 65%. Jeżeli klątwa utrzyma się przez co najmniej 2,5 sek., zużycie jej spowoduje zauroczenie celu",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 250,
+          "lvl2": 300,
+          "lvl3": 350,
+          "lvl4": 400,
+          "lvl5": 450
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Smagnięcie",
+        "opis": "Evelynn przyciąga się do celu, zadając mu i wrogom znajdującym się na drodze obrażenia magiczne",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 75,
+          "lvl2": 100,
+          "lvl3": 125,
+          "lvl4": 150,
+          "lvl5": 175
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Ostatnia Pieszczota",
+        "opis": "Evelynn wyzwala swoją demoniczną energię, stając się niemożliwą do obrania za cel i dziesiątkując wrogów przed sobą zadając Ability power icon.png obrażenia magiczne, zwiększone w przypadku wrogów mających mniej niż 30% maksymalnego zdrowia, po czym się wycofuje.",
+        "skalowanieMocyUmiejetnosci": 1.8,
+        "bazoweObrazenia": {
+          "lvl1": 300,
+          "lvl2": 600,
+          "lvl3": 900
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Demoniczny Cień",
+        "opis": "Bierna: Evelynn zostaje otoczona demonicznym cieniem po spędzeniu 1,5 sek. poza walką\nDemoniczny Cień: Gdy pasek zdrowia Evelynn spadnie poniżej 250 - 590 (+ 250% mocy umiejętności) pkt. zdrowia, Evelynn zacznie się Health icon.png leczyć, przywracając sobie 15 - 75 punktów zdrowia na sekundę. Od 6 poziomu Demoniczny Cień zapewnia również kamuflaż."
+      }},
+    {
+      "imie": "Lissandra",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 620,
+        "mana": 475,
+        "obrazeniaOdAtaku": 55,
+        "mocUmiejetnosci": 0,
+        "pancerz": 22,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.656,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 325
+      },
+      "skalowanie": {
+        "skalowanieHP" : 110,
+        "skalowanieMany" : 30,
+        "skalowanieAD": 2.7,
+        "skalowaniePancerz": 4.9,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+      "umiejetnoscPierwsza": {
+        "nazwa": "Odłamek Lodu",
+        "opis": "Lissandra ciska lodową włócznią, która porusza się w linii prostej i rozbija się, gdy trafi wroga, zadając obrażenia magiczne i spowalniając go na 1.5 sekundy. Odłamki następnie przechodzą przez cel i zadają obrażenia trafionym wrogom (nie spowalnia ich).",
+        "skalowanieMocyUmiejetnosci": 0.8,
+        "bazoweObrazenia": {
+          "lvl1": 80,
+          "lvl2": 110,
+          "lvl3": 140,
+          "lvl4": 170,
+          "lvl5": 200
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Pierścień Mrozu",
+        "opis":  "Lissandra zamraża obszar dookoła, zadając obrażenia magiczne wrogom i unieruchamiając ich na krótki czas.",
+        "skalowanieMocyUmiejetnosci": 0.7,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 105,
+          "lvl3": 140,
+          "lvl4": 175,
+          "lvl5": 210
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Ścieżka Lodowca",
+        "opis": "Lissandra ciska powolnym, długodystansowym lodowym pazurem na 1.5 sekundy, zadającym obrażenia magiczne wrogom na swojej drodze. Ponowne użycie Ścieżki Lodowca teleportuje Lissandrę do aktualnego położenia pazura.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 105,
+          "lvl3": 140,
+          "lvl4": 175,
+          "lvl5": 210
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Lodowy Grobowiec",
+        "opis": "Lissandra zamraża wrogiego bohatera, zadając mu obrażenia magiczne i ogłuszając go na 1.5 sekundy.",
+        "skalowanieMocyUmiejetnosci": 0.75,
+        "bazoweObrazenia": {
+          "lvl1": 150,
+          "lvl2": 250,
+          "lvl3": 350
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Zrodzona z Lodu Niewola",
+        "opis": "Jeśli w pobliżu Lissandry zginie wrogi bohater - moc Lissandry przekształca jego zwłoki w Zamarzniętego Niewolnika, który istnieje i podąża za wrogimi celami przez 4 sekundy, spowalniając w swoim obszarze przeciwników o 25%. Po 4 sekundach Niewolnik roztrzaskuje się zadając 120 − 520 (wzrasta co poziom) (+ 50% AP)."
+      }},
+    {
+      "imie": "Annie",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 560,
+        "mana": 418,
+        "obrazeniaOdAtaku": 50,
+        "mocUmiejetnosci": 0,
+        "pancerz": 19,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.579,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 335
+      },
+      "skalowanie": {
+        "skalowanieHP" : 102,
+        "skalowanieMany" : 25,
+        "skalowanieAD": 2.65,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+      "umiejetnoscPierwsza": {
+        "nazwa": "Dezintegracja",
+        "opis": "Annie rzuca wzmocnioną kulą ognia w wybrany wrogi cel i zadaje mu obrażenia magiczne.",
+        "skalowanieMocyUmiejetnosci": 0.8,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 115,
+          "lvl3": 150,
+          "lvl4": 185,
+          "lvl5": 220
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Spopielenie",
+        "opis":  "Annie tworzy stożek płomieni, który zadaje obrażenia magiczne wszystkim wrogom w obszarze",
+        "skalowanieMocyUmiejetnosci": 0.85,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 115,
+          "lvl3": 160,
+          "lvl4": 205,
+          "lvl5": 250
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Płonąca Tarcza",
+        "opis": "Przyznaje Annie i Tibbersowi procentowo zwiększoną odporność na obrażenia oraz zadaje obrażenia wrogom, którzy trafią ją podstawowymi atakami.",
+        "skalowanieMocyUmiejetnosci": 0.4,
+        "bazoweObrazenia": {
+          "lvl1": 25,
+          "lvl2": 35,
+          "lvl3": 45,
+          "lvl4": 55,
+          "lvl5": 65
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Przywołanie: Tibbers",
+        "opis": "Annie przywołuje do życia swojego pluszowego misia Tibbersa w wybranym miejscu na 45 sekund i zadaje obrażenia magiczne wszystkim wrogom w obszarze.",
+        "skalowanieMocyUmiejetnosci": 0.75,
+        "bazoweObrazenia": {
+          "lvl1": 150,
+          "lvl2": 275,
+          "lvl3": 400
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Piromania",
+        "opis": "Po rzuceniu 4 zaklęć, następna zadająca obrażenia umiejętność Annie dodatkowo ogłuszy trafione cele na 1,25 / 1,5 / 1,75 sekundy."
+      }},
+    {
+      "imie": "Ryze",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 645,
+        "mana": 300,
+        "obrazeniaOdAtaku": 58,
+        "mocUmiejetnosci": 0,
+        "pancerz": 22,
+        "odpornoscNaMagie": 32,
+        "predkoscAtaku": 0.625,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 340
+      },
+      "skalowanie": {
+        "skalowanieHP" : 124,
+        "skalowanieMany" : 70,
+        "skalowanieAD": 3,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Przeciążenie",
+        "opis": "Wywołuje runiczny wybuch, który zadaje obrażenia magiczne pierwszemu trafionemu wrogowi. Wszystkie aktywne Runy ulegają rozładowaniu.",
+        "skalowanieMocyUmiejetnosci": 1.55,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 90,
+          "lvl3": 110,
+          "lvl4": 130,
+          "lvl5": 150
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Runiczne Więzienie",
+        "opis":  "Natychmiastowo unieruchamia wroga na 0,75 sek. i zadaje mu obrażenia magiczne.",
+        "skalowanieMocyUmiejetnosci": 0.70,
+        "bazoweObrazenia": {
+          "lvl1": 80,
+          "lvl2": 110,
+          "lvl3": 140,
+          "lvl4": 170,
+          "lvl5": 200
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Fluktuacja Magii",
+        "opis": "Nakłada na wroga Fluktuację, która zadaje obrażenia magiczne. Zaklęcia, które zabiją wrogów dotkniętych Fluktuacją, rozprzestrzeniają ją na pobliskich przeciwników.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 90,
+          "lvl3": 120,
+          "lvl4": 150,
+          "lvl5": 180
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Zagięcie Czasoprzestrzeni",
+        "opis": "Ryze otwiera portal. Po 2 sek. wszyscy sojusznicy w pobliżu portalu zostają przeniesieni do miejsca docelowego.",
+        "skalowanieMocyUmiejetnosci": 0.45,
+        "bazoweObrazenia": {
+          "lvl1": 0,
+          "lvl2": 0,
+          "lvl3": 0
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Mistrzostwo Magii",
+        "opis": "Zaklęcia Ryze'a zadają dodatkowe obrażenia zależne od jego dodatkowej many, a jego maksymalna mana zostaje zwiększona o 5% za każde 100 pkt. mocy umiejętności."
+      }},
+    {
+      "imie": "Ahri",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 590,
+        "mana": 418,
+        "obrazeniaOdAtaku": 53,
+        "mocUmiejetnosci": 0,
+        "pancerz": 21,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.66,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 330
+      },
+      "skalowanie": {
+        "skalowanieHP" : 96,
+        "skalowanieMany" : 25,
+        "skalowanieAD": 3,
+        "skalowaniePancerz": 4.7,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Zwodnicza Kula",
+        "opis": "Ahri wypuszcza swoją kulę, która zadaje obrażenia magiczne w drodze do celu, a następnie wraca zadając nieuchronne obrażenia.",
+        "skalowanieMocyUmiejetnosci": 0.35,
+        "bazoweObrazenia": {
+          "lvl1": 40,
+          "lvl2": 65,
+          "lvl3": 90,
+          "lvl4": 115,
+          "lvl5": 140
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Ogniki",
+        "opis":  "Ahri wypuszcza trzy ogniki, które orbitują wokół niej do 5 sekund. Po chwili kierują się na pobliskich widocznych wrogów (w pierwszej kolejności bohaterów, a drugiej ostatni cel ataku podstawowego), zadając obrażenia magiczne.",
+        "skalowanieMocyUmiejetnosci": 0.30,
+        "bazoweObrazenia": {
+          "lvl1": 40,
+          "lvl2": 65,
+          "lvl3": 90,
+          "lvl4": 115,
+          "lvl5": 140
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Urok",
+        "opis": "Ahri posyła buziaka, który zadaje obrażenia magiczne i rzuca urok na pierwszego wroga, którego napotka na swojej drodze, dzięki czemu podchodzi on do niej całkiem bezbronny oraz spowolniony o 50%.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 95,
+          "lvl3": 130,
+          "lvl4": 165,
+          "lvl5": 200
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Widmowa Szarża",
+        "opis": "Ahri skacze do przodu i wystrzeliwuje pociski esencji w stronę 3 pobliskich wrogów (w pierwszej kolejności bohaterów), zadając obrażenia magiczne.",
+        "skalowanieMocyUmiejetnosci": 0.25,
+        "bazoweObrazenia": {
+          "lvl1": 210,
+          "lvl2": 330,
+          "lvl3": 450
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Kradzież Esencji",
+        "opis": "Ahri otrzymuje ładunek Kradzieży Esencji, kiedy trafi wroga zaklęciem (maksymalnie 3 ładunki na umiejętność). Po osiągnięciu 9 ładunków następna umiejętność Ahri uleczy ją o 3 / 5 / 9 / 18 (+9% mocy umiejętności) punkty zdrowia za każdego trafionego wroga."
+      }},
+    {
+      "imie": "Veigar",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 575,
+        "mana": 490,
+        "obrazeniaOdAtaku": 52,
+        "mocUmiejetnosci": 0,
+        "pancerz": 21,
+        "odpornoscNaMagie": 32,
+        "predkoscAtaku": 0.625,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 340
+      },
+      "skalowanie": {
+        "skalowanieHP" : 108,
+        "skalowanieMany" : 26,
+        "skalowanieAD": 2.7,
+        "skalowaniePancerz": 5.2,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Złowrogie Uderzenie",
+        "opis": "Veigar atakuje pociskiem mrocznej energii, który zadaje określoną wartość pkt. obrażeń magicznych pierwszym dwóm trafionym przeciwnikom.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 80,
+          "lvl2": 120,
+          "lvl3": 160,
+          "lvl4": 200,
+          "lvl5": 240
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Ciemna Materia",
+        "opis":  "Po 1,2 sek. w wybrane miejsce z niebios spada czarna materia, zadając określoną wartość pkt. obrażeń magicznych.",
+        "skalowanieMocyUmiejetnosci": 1,
+        "bazoweObrazenia": {
+          "lvl1": 100,
+          "lvl2": 150,
+          "lvl3": 200,
+          "lvl4": 250,
+          "lvl5": 300
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Horyzont Zdarzeń",
+        "opis": "Po 0,5 sek. opóźnienia Veigar zagina krawędzie przestrzeni wokół wybranego miejsca na 3 sekundy, tworząc pentagon ścian. Przeciwnicy, którzy spróbują przez nie przejść, zostaną zatrzymani i ogłuszeni na pewien czas.",
+        "skalowanieMocyUmiejetnosci": 0.3,
+        "bazoweObrazenia": {
+          "lvl1": 0,
+          "lvl2": 0,
+          "lvl3": 0,
+          "lvl4": 0,
+          "lvl5": 0
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Przedwieczny Wybuch",
+        "opis": "Uderza we wrogiego bohatera pierwotną magią, zadając określoną wartość pkt. obrażeń magicznych, w zależności od brakującego zdrowia celu.",
+        "skalowanieMocyUmiejetnosci": 0.75,
+        "bazoweObrazenia": {
+          "lvl1": 350,
+          "lvl2": 500,
+          "lvl3": 650
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Niezwykle Nikczemna Moc",
+        "opis": "Veigar jest największym złem, jakie kiedykolwiek uderzyło w serce Runeterry — i staje się coraz potężniejszy! Trafienie wrogiego bohatera zaklęciem daje Veigarowi ładunek Niezwykłej Nikczemności, w związku z czym zyskuje 1 pkt. mocy umiejętności. Udział w zabójstwach zapewnia 5 dodatkowych ładunków."
+      }},
+    {
+      "imie": "Orianna",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 600,
+        "mana": 418,
+        "obrazeniaOdAtaku": 50,
+        "mocUmiejetnosci": 0,
+        "pancerz": 20,
+        "odpornoscNaMagie": 26,
+        "predkoscAtaku": 0.658,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 325
+      },
+      "skalowanie": {
+        "skalowanieHP" : 105,
+        "skalowanieMany" : 25,
+        "skalowanieAD": 2.6,
+        "skalowaniePancerz": 4.2,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Rozkaz: Atak",
+        "opis": "Orianna rozkazuje Kuli, by wystrzeliła w dane miejsce, zadając określoną wartość pkt. obrażeń magicznych celom po drodze. Zadaje jednak o 10% mniej obrażeń każdej kolejnej trafionej jednostce (minimalnie 40%).",
+        "skalowanieMocyUmiejetnosci": 0.5,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 90,
+          "lvl3": 120,
+          "lvl4": 150,
+          "lvl5": 180
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Rozkaz: Dysonans",
+        "opis":  "Orianna rozkazuje Kuli wytworzyć impuls elektryczny, zadający określoną wartość pkt. obrażeń magicznych pobliskim wrogom.",
+        "skalowanieMocyUmiejetnosci": 0.7,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 105,
+          "lvl3": 150,
+          "lvl4": 195,
+          "lvl5": 240
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Rozkaz: Chroń",
+        "opis": "Orianna rozkazuje Kuli przyczepić się do sojuszniczego bohatera, by osłaniać go przez 2,5 sek. przed określoną wartością pkt. obrażeń. Wrogowie, przez których przeniknie kula, otrzymują obrażenia równe pewną wartość pkt. obrażeń magicznych.",
+        "skalowanieMocyUmiejetnosci": 0.3,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 90,
+          "lvl3": 120,
+          "lvl4": 150,
+          "lvl5": 180
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Rozkaz: Fala Uderzeniowa",
+        "opis": "Orianna rozkazuje Kuli, by po chwili wypuściła falę uderzeniową, zadając określoną wartość pkt. obrażeń magicznych pobliskim wrogom i wyrzucając ich w powietrze w kierunku Kuli.",
+        "skalowanieMocyUmiejetnosci": 0.9,
+        "bazoweObrazenia": {
+          "lvl1": 250,
+          "lvl2": 350,
+          "lvl3": 450
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Nakręcanie",
+        "opis": "Orianna używa swej Kuli jako punktu centralnego zaklęć. Kula automatyczny wraca do bohaterki, jeśli jest od niej zbyt daleko."
+      }},
+    {
+      "imie": "Kassadin",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 646,
+        "mana": 400,
+        "obrazeniaOdAtaku": 59,
+        "mocUmiejetnosci": 0,
+        "pancerz": 19,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.64,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 335
+      },
+      "skalowanie": {
+        "skalowanieHP" : 119,
+        "skalowanieMany" : 87,
+        "skalowanieAD": 3.9,
+        "skalowaniePancerz": 4,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Sfera Nicości",
+        "opis": "Aktywna: Kassadin ciska nieziemskim pociskiem z energii Pustki, zadając obrażenia i przerywając ładowanie się zaklęć.",
+        "skalowanieMocyUmiejetnosci": 0.7,
+        "bazoweObrazenia": {
+          "lvl1": 65,
+          "lvl2": 95,
+          "lvl3": 125,
+          "lvl4": 155,
+          "lvl5": 185
+        }},
+      "umiejetnoscDruga": {
+        "nazwa": "Piekielne Ostrze",
+        "opis":  "Kassadin ładuje swoje Piekielne Ostrze, powodując, że jego następny podstawowy atak posiada zwiekszony zasięg o 50 jednostek i zadaje dodatkowo obrażenia magiczne oraz przywraca mu % brakującej many.",
+        "skalowanieMocyUmiejetnosci": 0.8,
+        "bazoweObrazenia": {
+          "lvl1": 50,
+          "lvl2": 75,
+          "lvl3": 110,
+          "lvl4": 125,
+          "lvl5": 150
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Puls Mocy",
+        "opis": "Kassadin wystrzeliwuję stożkowy impuls pozaziemskiej energii z Pustki, zadając obrażenia magiczne i spowalniając na 1 sekundę cele w obszarze.",
+        "skalowanieMocyUmiejetnosci": 0.85,
+        "bazoweObrazenia": {
+          "lvl1": 60,
+          "lvl2": 90,
+          "lvl3": 120,
+          "lvl4": 150,
+          "lvl5": 180
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Krok przez Wymiary",
+        "opis": "Kassadin teleportuje się w wybrane miejsce w okolicy, zadając obrażenia otaczającym go wrogom.",
+        "skalowanieMocyUmiejetnosci": 0.4,
+        "bazoweObrazenia": {
+          "lvl1": 70,
+          "lvl2": 90,
+          "lvl3": 110
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "Kamień Pustki",
+        "opis": "Kassadin redukuje otrzymane obrażenia magiczne o 15% i zyskuje możliwość przenikania przez jednostki."
+      }},
+    {
+      "imie": "Anivia",
+      "poziom": 1,
+      "statystyki": {
+        "hp": 550,
+        "mana": 495,
+        "obrazeniaOdAtaku": 51,
+        "mocUmiejetnosci": 0,
+        "pancerz": 21,
+        "odpornoscNaMagie": 30,
+        "predkoscAtaku": 0.63,
+        "przyspieszenieUmiejetnosci": 0,
+        "szansaNaTrafienieKrytyczne": 0,
+        "predkoscRuchu": 325
+      },
+      "skalowanie": {
+        "skalowanieHP" : 92,
+        "skalowanieMany" : 45,
+        "skalowanieAD": 3.2,
+        "skalowaniePancerz": 4.9,
+        "skalowanieMR": 1.3,
+        "skalowanieAS": 0.0095
+      },
+
+
+      "umiejetnoscPierwsza": {
+        "nazwa": "Błyskawiczny mróz",
+        "opis": "Anivia macha skrzydłami, przywołując kulę lodu, która leci w kierunku przeciwników, obladzając i zadając obrażenia celom na swej drodze. Kiedy pocisk wybuchnie, zadaje obrażenia obszarowe i ogłusza cele w okolicy.",
+        "skalowanieMocyUmiejetnosci": 0.35,
+        "bazoweObrazenia": {
+          "lvl1": 110,
+          "lvl2": 165,
+          "lvl3": 220,
+          "lvl4": 275,
+          "lvl5": 330
+        }
+      },
+      "umiejetnoscDruga": {
+        "nazwa": "Krystalizacja",
+        "opis":  "Anivia zamraża wilgoć w powietrzu, tworząc lodową ścianę blokującą ruchy. Ściana utrzymuje się tylko przez chwilę, po czym topnieje.",
+        "bazoweObrazenia": {
+          "lvl1": 0,
+          "lvl2": 0,
+          "lvl3": 0,
+          "lvl4": 0,
+          "lvl5": 0
+        }
+      },
+      "umiejetnoscTrzecia": {
+        "nazwa": "Odmrożenie",
+        "opis": "Machnięciem skrzydeł Anivia wysyła w stronę celu lodowaty podmuch wiatru, zadając obrażenia. Jeżeli cel został niedawno trafiony Błyskawicznym Mrozem lub otrzymał obrażenia od w pełni uformowanej Burzy Lodu, otrzyma podwójne obrażenia.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 100,
+          "lvl2": 150,
+          "lvl3": 200,
+          "lvl4": 250,
+          "lvl5": 300
+        }
+      },
+      "umiejetnoscCzwarta": {
+        "nazwa": "Burza lodu",
+        "opis": "Anivia przywołuje deszcz lodu i gradu, który zadaje wrogom obrażenia i spowalnia ich.",
+        "skalowanieMocyUmiejetnosci": 0.6,
+        "bazoweObrazenia": {
+          "lvl1": 45,
+          "lvl2": 68,
+          "lvl3": 90
+        }
+      },
+      "umiejetnoscPasywna": {
+        "nazwa": "ODRODZENIE",
+        "opis": "Po otrzymaniu śmiertelnych obrażeń Anivia przybiera postać jaja i odradza się z pełnią zdrowia."
+      }}
+  ],
+  "itemy": [
+    {
+      "nazwa": "hextechowy pas rakietowy",
+      "typ": "Mityczny",
+      "pasywka": "Doskakujesz w wybranym kierunku, wystrzeliwując łuk magicznych pocisków, zadawając obrażenia oraz zapewnia wszystkim legendarnym przedmiotom przebicie odporności na magie",
+      "mocUmiejetnosci": 90,
+      "hp": 250,
+      "przyspieszenieUmiejetnosci": 15,
+      "pktPrzebiciaOdpornosciNaMagie": 6
+    },
+    {
+      "nazwa": "kryształowy kostur rylai",
+      "typ": "Legendary",
+      "pasywka": "Umiejętności zadające obrażenia spowalniają wrogów",
+      "mocUmiejetnosci": 75,
+      "hp": 400
+    },
+    {
+      "nazwa": "korona rozstrzaskanej krolowej",
+      "typ": "Mityczny",
+      "pasywka": "Zapewnia osłone która redukuje obrażenia",
+      "mocUmiejetnosci": 70,
+      "hp": 250,
+      "mana": 600,
+      "przyspieszenieUmiejetnosci": 20
+    },
+    {
+      "nazwa": "wieczna zmarzlina",
+      "typ": "Mityczny",
+      "pasywka": "Zamraza przeciwników po użyciu w stożku",
+      "mocUmiejetnosci": 70,
+      "hp": 250,
+      "mana": 600,
+      "przyspieszenieUmiejetnosci": 20
+    },
+    {
+      "nazwa": "kostur archaniola",
+      "typ": "Legendarny",
+      "mocUmiejetnosci": 70,
+      "hp": 200,
+      "mana": 500,
+      "przyspieszenieUmiejetnosci": 10
+    },
+    {
+      "nazwa": "klepsydra zhonyi",
+      "typ": "Legendarny",
+      "pasywka": "Zyskujesz niewrażliwość na 2.5sekundy, lecz nie możesz wykonywać żadnych akcji",
+      "mocUmiejetnosci": 80,
+      "pancerz": 45,
+      "przyspieszenieUmiejetnosci": 15
+    },
+    {
+      "nazwa": "morello",
+      "typ": "Legendarny",
+      "pasywka": "Redukujesz leczenie przeciwnika po trafieniu umiejętnością",
+      "mocUmiejetnosci": 90,
+      "hp": 200,
+      "pktPrzebiciaOdpornosciNaMagie": 10
+    },
+    {
+      "nazwa": "skupienie horyzentalne",
+      "typ": "Legendarny",
+      "pasywka": "Po trafieniu umiejętnością z minimum, 700jednostek zadajesz dodatkowe obrażenia",
+      "mocUmiejetnosci": 100,
+      "hp": 150,
+      "przyspieszenieUmiejetnosci": 15
+    },
+    {
+      "nazwa": "demoniczny uscisk",
+      "typ": "Legendarny",
+      "pasywka": "Pali przeciwnikow",
+      "mocUmiejetnosci": 75,
+      "hp": 350
+    },
+    {
+      "nazwa": "szczelinotworca",
+      "typ": "Mityczny",
+      "pasywka": "Za każdą sekunde w walce zadajesz dodatkowe obrażenia",
+      "mocUmiejetnosci": 70,
+      "hp": 300,
+      "przyspieszenieUmiejetnosci": 15
+    },
+    {
+      "nazwa": "nocny zniwiarz",
+      "typ": "Mityczny",
+      "pasywka": "Zadawanie obrażeń bohaterom zadaje dodatkowe obrażenia",
+      "mocUmiejetnosci": 130,
+      "hp": 300,
+      "przyspieszenieUmiejetnosci": 25
+    },
+    {
+      "nazwa": "szczelinotworca",
+      "typ": "Legendarny",
+      "pasywka": "Pali przeciwników zadając obrażenia",
+      "mocUmiejetnosci": 80,
+      "mana": 600,
+      "przyspieszenieUmiejetnosci": 20
+    },
+    {
+      "nazwa": "rozdzka zniszczenia",
+      "typ": "Zwykły",
+      "mocUmiejetnosci": 40
+    },
+    {
+      "nazwa": "buty",
+      "typ": "buty",
+      "predkoscRuchu": 25
+    },
+    {
+      "nazwa": "buty predkosci",
+      "typ": "Buty",
+      "pasywka": "Efekty spowalniające prędkości ruchu są osłabiane o 25%",
+      "predkoscRuchu": 60
+    },
+    {
+      "nazwa": "ionanskie buty jasnosci umyslu",
+      "typ": "Buty",
+      "pasywka": "Zyskujesz 12 jedn. przyśpieszenia czarów przywoływacza",
+      "predkoscRuchu": 45,
+      "przyspieszenieUmiejetnosci": 20
+    },
+    {
+      "nazwa": "buty mobilnosci",
+      "typ": "Buty",
+      "pasywka": "Gdy przebywasz poza walką conajmniej 5 sekund zyskujesz dodatkowo 115 prędkości ruchu",
+      "predkoscRuchu": 25
+    },
+    {
+      "nazwa": "pancerniaki",
+      "typ": "Buty",
+      "pasywka": "Zmniejsza obrażenia otrzymywane od ataków o 12%",
+      "predkoscRuchu": 45,
+      "pancerz": 50
+    },
+    {
+      "nazwa": "obuwie maga",
+      "typ": "Buty",
+      "predkosc ruchu": 45,
+      "pktPrzebiciaOdpornosciNaMagie": 18
+    },
+    {
+      "nazwa": "nagolenniki berserkera",
+      "typ": "Buty",
+      "predkoscRuchu": 45,
+      "predkoscAtakuBonus": 1.45
+    },
+    {
+      "nazwa": "plomien cienia",
+      "typ": "Legendarny",
+      "pasywka": "Obrażenia zadawane bohaterom zyskują dodatkowe przebicie odporności na magie w zależności od aktualnego zdrowia celu",
+      "mocUmiejetnosci": 100,
+      "hp": 200
+    },
+    {
+      "nazwa": "kosmiczny puls",
+      "typ": "Legendarny",
+      "pasywka": "Zadawanie obrażeń bohaterom za pomocą min 3 umiejętności lub zaklęć zapewnia dodatkową prędkość ruchu oraz moc umiejętności aż do zakończenia walki z przeciwnikiem",
+      "mocUmiejetnosci": 65,
+      "hp": 200,
+      "przyspieszenieUmiejetnosci": 30,
+      "skalowanieRuchu": 0.05
+    },
+    {
+      "nazwa": "nawalnica luden",
+      "typ": "Mityczny",
+      "pasywka": "Umiejętności zadają obrażenia magiczne celowi i trzem pobliskim wrogom, oraz zapewniają Ci prędkość ruchu \nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom Przebicie odporności na magie",
+      "mocUmiejetnosci": 80,
+      "pktPrzebiciaOdpornosciNaMagie": 6,
+      "mana": 600,
+      "przyspieszenieUmiejetnosci": 20
+    },
+    {
+      "nazwa": "ostrze nieskonczonosci",
+      "typ": "Legendarny",
+      "pasywka": "Jeżeli masz conajmniej 40% na krytyka, zyskujesz 35% dodatkowych obrażeń trafienia krytycznego",
+      "obrazeniaOdAtaku": 70,
+      "szansaNaTrafienieKrytyczne": 1.2
+    },
+    {
+      "nazwa": "calun banshee",
+      "typ": "Legendarny",
+      "pasywka": "Zapewnia tarcze magii, która blokuje następną wrogą umiejętność",
+      "mocUmiejetnosci": 80,
+      "odpornoscNaMagie": 45,
+      "przyspieszenieUmiejetnosci": 10
+    }
+
+  ]
+}
