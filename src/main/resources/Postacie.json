@@ -921,6 +921,7 @@
     {
       "nazwa": "kostur archaniola",
       "typ": "Legendarny",
+      "pasywka": "Zbiera manę, jak uzbiera wystarczająco dużo to przedmiot ewoluuje",
       "mocUmiejetnosci": 70,
       "hp": 200,
       "mana": 500,
@@ -984,6 +985,7 @@
     {
       "nazwa": "rozdzka zniszczenia",
       "typ": "Zwykły",
+      "pasywka": "Zwykle różdzka",
       "mocUmiejetnosci": 40
     },
     {
@@ -1020,12 +1022,14 @@
     {
       "nazwa": "obuwie maga",
       "typ": "Buty",
+      "pasywka": "Buty zwiększające przebicie magiczne",
       "predkosc ruchu": 45,
       "pktPrzebiciaOdpornosciNaMagie": 18
     },
     {
       "nazwa": "nagolenniki berserkera",
       "typ": "Buty",
+      "pasywka": "Buty zwiększające attack speed",
       "predkoscRuchu": 45,
       "predkoscAtakuBonus": 1.45
     },
