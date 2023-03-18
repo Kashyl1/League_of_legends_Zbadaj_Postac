@@ -12,86 +12,86 @@ import java.util.stream.Collectors;
 
 public class App {
     Scanner scanner = new Scanner(System.in);
-    List<Postac> postacie;
-    List<Przedmioty> przedmioty;
-    HashMap<String, HashMap<String, String>> ekwipunekBohatera = new HashMap<>();
+    List<Champion> champions;
+    List<Items> items;
+    HashMap<String, HashMap<String, String>> championInventory = new HashMap<>();
 
-    Postac znalezionyBohater = null;
-    Przedmioty znalezionyPrzedmiot = null;
+    Champion heroFound = null;
+    Items itemFound = null;
 
     public App() {
 
         Gson gson = new Gson();
-        Reader readerPostacie;
-        Reader readerPrzedmioty;
-        InputStream inputStreamPostacie = getClass().getResourceAsStream("/Postacie.json");
-        InputStream inputStreamPrzedmioty = getClass().getResourceAsStream("/Postacie.json");
-        assert inputStreamPostacie != null;
-        readerPostacie = new InputStreamReader(inputStreamPostacie);
-        assert inputStreamPrzedmioty != null;
-        readerPrzedmioty = new InputStreamReader(inputStreamPrzedmioty);
+        Reader readerChampions;
+        Reader readerItems;
+        InputStream inputStreamChampions = getClass().getResourceAsStream("/Postacie.json");
+        InputStream inputStreamItems = getClass().getResourceAsStream("/Postacie.json");
+        assert inputStreamChampions != null;
+        readerChampions = new InputStreamReader(inputStreamChampions);
+        assert inputStreamItems != null;
+        readerItems = new InputStreamReader(inputStreamItems);
 
-        JsonObject json = gson.fromJson(readerPostacie, JsonObject.class);
-        JsonArray postacieJson = json.getAsJsonArray("postacie");
-        postacie = new ArrayList<>();
-        for (JsonElement postacJson : postacieJson) {
-            Postac postac = gson.fromJson(postacJson, Postac.class);
-            postacie.add(postac);
+        JsonObject json = gson.fromJson(readerChampions, JsonObject.class);
+        JsonArray championsJson = json.getAsJsonArray("postacie");
+        champions = new ArrayList<>();
+        for (JsonElement postacJson : championsJson) {
+            Champion champion = gson.fromJson(postacJson, Champion.class);
+            champions.add(champion);
         }
 
-        JsonObject jsonPrzedmioty = gson.fromJson(readerPrzedmioty, JsonObject.class);
-        JsonArray przedmiotyJson = jsonPrzedmioty.getAsJsonArray("itemy");
-        przedmioty = new ArrayList<>();
+        JsonObject jsonItems = gson.fromJson(readerItems, JsonObject.class);
+        JsonArray ItemsJson = jsonItems.getAsJsonArray("itemy");
+        items = new ArrayList<>();
 
-        for (JsonElement przedmiotJson : przedmiotyJson) {
-            Przedmioty przedmioty1 = gson.fromJson(przedmiotJson, Przedmioty.class);
-            przedmioty.add(przedmioty1);
+        for (JsonElement ItemJson : ItemsJson) {
+            Items items1 = gson.fromJson(ItemJson, Items.class);
+            items.add(items1);
         }
-        System.out.println(Informacje.WPROWADZENIE.getWiadomosc());
-        System.out.println(Informacje.WYBOR_BOHATERA.getWiadomosc());
-        String wybierzBohateraLubPrzedmiot = scanner.nextLine();
-        Wybor wybor = Wybor.get(wybierzBohateraLubPrzedmiot);
-        while (wybor != Wybor.EXIT) {
+        System.out.println(Informations.INTRODUCTION.getMessage());
+        System.out.println(Informations.MAIN_OPTIONS.getMessage());
+        String itemOrHeroChoice = scanner.nextLine();
+        Choice choice = Choice.get(itemOrHeroChoice);
+        while (choice != Choice.EXIT) {
             boolean petlaNr2 = true;
             try {
-                switch (wybor) {
+                switch (choice) {
                     case CHAMPIONS:
-                        pokazBohaterow();
-                    case NIEZNANA_KOMENDA:
-                        System.out.println(wybor.getWiadomosc());
+                        heroShow();
+                    case UNKNOWN_COMMAND:
+                        System.out.println(choice.getMessage());
                         break;
-                    case ITEMY:
-                        pokazPrzedmioty();
+                    case ITEMS:
+                        itemShow();
                         break;
-                    case WYBOR_BOHATERA:
-                        System.out.println(wybor.getWiadomosc());
-                        wybierzBohateraLubPrzedmiot = scanner.nextLine();
+                    case HERO_CHOICE:
+                        System.out.println(choice.getMessage());
+                        itemOrHeroChoice = scanner.nextLine();
                         while (petlaNr2) {
-                            znalezionyBohater = szukajBohatera(wybierzBohateraLubPrzedmiot);
-                            if (znalezionyBohater != null) {
-                                System.out.println(Informacje.OPCJE_BOHATERA_DO_WYBORU.getWiadomosc());
-                                String wybierzAtrybut = scanner.nextLine();
-                                wybor = Wybor.get(wybierzAtrybut);
-                                switch (wybor) {
-                                    case OPCJE_DLA_BOHATERA, NIEZNANA_KOMENDA:
-                                        System.out.println(wybor.getWiadomosc());
+                            heroFound = heroFind(itemOrHeroChoice);
+                            if (heroFound != null) {
+                                System.out.println(Informations.HERO_INFO.getMessage());
+                                String pickOption = scanner.nextLine();
+                                choice = Choice.get(pickOption);
+                                switch (choice) {
+                                    case OPTIONS_FOR_HERO, UNKNOWN_COMMAND:
+                                        System.out.println(choice.getMessage());
                                         break;
                                     case CONTINUE:
-                                        pokazInformacjeOBohaterze(wybierzAtrybut, znalezionyBohater);
+                                        showHeroInfo(pickOption, heroFound);
                                         break;
-                                    case WYBIERZ_LEVEL_BOHATERA:
-                                        poziomBohatera(znalezionyBohater);
+                                    case LEVEL_CHOICE:
+                                        heroLevel(heroFound);
                                         break;
-                                    case PRZEJDZ_DO_EKWIPUNKU:
-                                        ekwipunekBohatera(znalezionyBohater);
+                                    case INVENTORY:
+                                        heroInventory(heroFound);
                                         break;
-                                    case POJEDYNEK:
-                                        testUmiejetnosci(znalezionyBohater);
+                                    case DUEL:
+                                        abilityTest(heroFound);
                                     case RETURN:
                                         petlaNr2 = false;
                                         break;
                                     case EXIT:
-                                        System.out.println(wybor.getWiadomosc());
+                                        System.out.println(choice.getMessage());
                                         System.exit(1);
                                 }
                             } else {
@@ -99,13 +99,13 @@ public class App {
                             }
                         }
                         break;
-                    case WYBOR_PRZEDMIOTU:
-                        System.out.println(wybor.getWiadomosc());
-                        wybierzBohateraLubPrzedmiot = scanner.nextLine();
-                        znalezionyPrzedmiot = szukajPrzedmiotow(wybierzBohateraLubPrzedmiot);
-                        if (znalezionyPrzedmiot != null) {
-                            znalezionyPrzedmiot(znalezionyPrzedmiot);
-                            System.out.println(znalezionyPrzedmiot);
+                    case ITEM_CHOICE:
+                        System.out.println(choice.getMessage());
+                        itemOrHeroChoice = scanner.nextLine();
+                        itemFound = findItem(itemOrHeroChoice);
+                        if (itemFound != null) {
+                            itemFound(itemFound);
+                            System.out.println(itemFound);
                         }
                         break;
                 }
@@ -114,135 +114,135 @@ public class App {
             } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(Informacje.WYBOR_BOHATERA.getWiadomosc());
-            wybierzBohateraLubPrzedmiot = scanner.nextLine();
-            wybor = Wybor.get(wybierzBohateraLubPrzedmiot);
+            System.out.println(Informations.MAIN_OPTIONS.getMessage());
+            itemOrHeroChoice = scanner.nextLine();
+            choice = Choice.get(itemOrHeroChoice);
 
         }
-        System.out.println(wybor.getWiadomosc());
+        System.out.println(choice.getMessage());
     }
 
-    public Przedmioty szukajPrzedmiotow(String wybierzPrzedmiot) {
-        Przedmioty znalezionyPrzedmiot;
-        for (Przedmioty przedmioty1 : przedmioty) {
-            if (przedmioty1.nazwa().equalsIgnoreCase(wybierzPrzedmiot)) {
-                znalezionyPrzedmiot = przedmioty1;
-                return znalezionyPrzedmiot;
+    public Items findItem(String itemChoice) {
+        Items itemFound;
+        for (Items items1 : items) {
+            if (items1.name().equalsIgnoreCase(itemChoice)) {
+                itemFound = items1;
+                return itemFound;
             }
         }
-        System.out.println(ERROR.INVALID_ITEM.getWiadomosc() + wybierzPrzedmiot);
+        System.out.println(ERROR.INVALID_ITEM.getMessage() + itemChoice);
         return null;
     }
 
-    public void znalezionyPrzedmiot(Przedmioty przedmiot) {
-        System.out.println(Informacje.WYBRANY_PRZEDMIOT.getWiadomosc() + przedmiot.nazwa());
+    public void itemFound(Items item) {
+        System.out.println(Informations.ITEM_PICK.getMessage() + item.name());
     }
 
-    public void pokazBohaterow() {
+    public void heroShow() {
         System.out.println();
-        postacie.stream()
-                .collect(Collectors.groupingBy(i -> postacie.indexOf(i) / 4))
+        champions.stream()
+                .collect(Collectors.groupingBy(i -> champions.indexOf(i) / 4))
                 .forEach((key, value) -> System.out.println(value.stream()
-                        .map(Postac::getImie)
+                        .map(Champion::getName)
                         .collect(Collectors.joining(", "))));
         System.out.println();
     }
 
-    public Postac szukajBohatera(String bohater) {
-        Postac znalezionyBohater;
-        for (Postac postac : postacie) {
-            if (postac.getImie().equalsIgnoreCase(bohater)) {
-                znalezionyBohater = postac;
-                System.out.println(Informacje.WYBRANY_BOHATER.getWiadomosc() + bohater);
-                return znalezionyBohater;
+    public Champion heroFind(String hero) {
+        Champion heroFound;
+        for (Champion champion : champions) {
+            if (champion.getName().equalsIgnoreCase(hero)) {
+                heroFound = champion;
+                System.out.println(Informations.CHAMPION_PICK.getMessage() + hero);
+                return heroFound;
             }
         }
-        System.out.println(ERROR.INVALID_CHARACTER.getWiadomosc() + bohater);
+        System.out.println(ERROR.INVALID_CHARACTER.getMessage() + hero);
         return null;
     }
 
-    public void pokazPrzedmioty() {
+    public void itemShow() {
         System.out.println();
-        przedmioty.stream()
-                .collect(Collectors.groupingBy(i -> przedmioty.indexOf(i) / 4))
+        items.stream()
+                .collect(Collectors.groupingBy(i -> items.indexOf(i) / 4))
                 .forEach((key, value) -> System.out.println(value.stream()
-                        .map(Przedmioty::nazwa)
+                        .map(Items::name)
                         .collect(Collectors.joining(", "))));
         System.out.println();
     }
 
-    public void pokazInformacjeOBohaterze(String wybierzAtrybut, Postac znalezionyBohater) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Wybor wybor = Wybor.get(wybierzAtrybut);
-        assert znalezionyBohater != null;
-        switch (wybierzAtrybut.toLowerCase()) {
-            case "/opcje" -> System.out.println(wybor.getWiadomosc());
-            case "imie" -> System.out.println("Imię: " + znalezionyBohater.getImie());
-            case "poziom" -> System.out.println("Poziom: " + znalezionyBohater.getPoziom());
-            case "hp" -> System.out.println("HP: " + znalezionyBohater.getStatystyki().getHp());
-            case "mana" -> System.out.println("Mana: " + znalezionyBohater.getStatystyki().getMana());
-            case "obrazenia od ataku" -> System.out.println("Obrazenia od ataku: " + znalezionyBohater.getStatystyki().getObrazeniaOdAtaku());
-            case "moc umiejetnosci" -> System.out.println("Moc umiejetnosci: " + znalezionyBohater.getStatystyki().getMocUmiejetnosci());
-            case "predkosc ataku" -> System.out.println("Prędkość ataku: " + znalezionyBohater.getStatystyki().getPredkoscAtaku());
-            case "szansa na trafienie krytyczne" -> System.out.println("Szansa na trafienie krytyczne: " + znalezionyBohater.getStatystyki().getSzansaNaTrafienieKrytyczne());
-            case "odpornosc na magie" -> System.out.println("Odporność na magię: " + znalezionyBohater.getStatystyki().getOdpornoscNaMagie());
-            case "pancerz" -> System.out.println("Pancerz: " + znalezionyBohater.getStatystyki().getPancerz());
-            case "przyspieszenie umiejetnosci" -> System.out.println("Przyśpieszenie umiejętności: " + znalezionyBohater.getStatystyki().getPrzyspieszenieUmiejetnosci());
-            case "predkosc ruchu" -> System.out.println("Prędkość ruchu: " + znalezionyBohater.getStatystyki().getPredkoscRuchu());
-            case "q" -> umiejetnoscQ(znalezionyBohater);
-            case "w" -> umiejetnoscW(znalezionyBohater);
-            case "e" -> umiejetnoscE(znalezionyBohater);
-            case "r" -> umiejetnoscR(znalezionyBohater);
-            case "pasywka" -> umiejetnoscPasywna(znalezionyBohater);
-            case "statystyki" -> System.out.println(znalezionyBohater.getStatystyki().toString());
-            case "umiejetnosci" -> {
-                umiejetnoscQ(znalezionyBohater);
-                umiejetnoscW(znalezionyBohater);
-                umiejetnoscE(znalezionyBohater);
-                umiejetnoscR(znalezionyBohater);
-                umiejetnoscPasywna(znalezionyBohater);
+    public void showHeroInfo(String option, Champion foundHero) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Choice choice = Choice.get(option);
+        assert foundHero != null;
+        switch (option.toLowerCase()) {
+            case "/opcje" -> System.out.println(choice.getMessage());
+            case "name" -> System.out.println("Imię: " + foundHero.getName());
+            case "level" -> System.out.println("Poziom: " + foundHero.getLevel());
+            case "hp" -> System.out.println("HP: " + foundHero.getStatystyki().getHp());
+            case "mana" -> System.out.println("Mana: " + foundHero.getStatystyki().getMana());
+            case "physical damage" -> System.out.println("physicalDamage: " + foundHero.getStatystyki().getPhysicalDamage());
+            case "ability power" -> System.out.println("Ability power: " + foundHero.getStatystyki().getPowerAbility());
+            case "attack speed" -> System.out.println("Attack speed: " + foundHero.getStatystyki().getAttackSpeed());
+            case "crit chance" -> System.out.println("Crit chance: " + foundHero.getStatystyki().getCritChance());
+            case "magic resistance" -> System.out.println("Magic resistance: " + foundHero.getStatystyki().getMagicRes());
+            case "armor" -> System.out.println("Armor: " + foundHero.getStatystyki().getArmor());
+            case "cdr" -> System.out.println("Cooldown reduction: " + foundHero.getStatystyki().getCooldownReduction());
+            case "movement speed" -> System.out.println("Movement speed: " + foundHero.getStatystyki().getMovementSpeed());
+            case "q" -> abilityQ(foundHero);
+            case "w" -> abilityW(foundHero);
+            case "e" -> abilityE(foundHero);
+            case "r" -> abilityR(foundHero);
+            case "passive" -> passiveAbility(foundHero);
+            case "statistics" -> System.out.println(foundHero.getStatystyki().toString());
+            case "skills" -> {
+                abilityQ(foundHero);
+                abilityW(foundHero);
+                abilityE(foundHero);
+                abilityR(foundHero);
+                passiveAbility(foundHero);
             }
-            case "skalowanie" -> System.out.println(znalezionyBohater.getSkalowanie().toString());
-            case "wszystko" -> {
-                System.out.println("Imię: " + znalezionyBohater.getImie());
-                System.out.println("Poziom: " + znalezionyBohater.getPoziom());
-                System.out.println(znalezionyBohater.getStatystyki().toString());
-                System.out.println(znalezionyBohater.getSkalowanie().toString());
-                umiejetnosci(znalezionyBohater);
+            case "scaling" -> System.out.println(foundHero.getSkalowanie().toString());
+            case "all" -> {
+                System.out.println("Name: " + foundHero.getName());
+                System.out.println("Level: " + foundHero.getLevel());
+                System.out.println(foundHero.getStatystyki().toString());
+                System.out.println(foundHero.getSkalowanie().toString());
+                ability(foundHero);
             }
             default -> {
-                if (wybierzAtrybut.equalsIgnoreCase("/opcje bohatera")) {
-                    System.out.println(wybor.getWiadomosc());
+                if (option.equalsIgnoreCase("/champion option")) {
+                    System.out.println(choice.getMessage());
                 } else {
-                    System.out.println(ERROR.UNKNOWN_COMMAND.getWiadomosc());
+                    System.out.println(ERROR.UNKNOWN_COMMAND.getMessage());
                 }
             }
         }
     }
 
-    public void umiejetnosci(Postac znalezionyBohater) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
-        umiejetnoscQ(znalezionyBohater);
-        umiejetnoscW(znalezionyBohater);
-        umiejetnoscE(znalezionyBohater);
-        umiejetnoscR(znalezionyBohater);
-        umiejetnoscPasywna(znalezionyBohater);
+    public void ability(Champion foundHero) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        abilityQ(foundHero);
+        abilityW(foundHero);
+        abilityE(foundHero);
+        abilityR(foundHero);
+        passiveAbility(foundHero);
     }
 
-    public void pokazStatystykiOrazUmiejetnosciBohatera(Postac znalezionyBohater) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
-        umiejetnoscQ(znalezionyBohater);
-        umiejetnoscW(znalezionyBohater);
-        umiejetnoscE(znalezionyBohater);
-        umiejetnoscR(znalezionyBohater);
-        umiejetnoscPasywna(znalezionyBohater);
-        System.out.println("Poziom: " + znalezionyBohater.getPoziom());
-        System.out.println(znalezionyBohater.getStatystyki().toString());
+    public void showStatsAndSkills(Champion foundHero) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        abilityQ(foundHero);
+        abilityW(foundHero);
+        abilityE(foundHero);
+        abilityR(foundHero);
+        passiveAbility(foundHero);
+        System.out.println("Level: " + foundHero.getLevel());
+        System.out.println(foundHero.getStatystyki().toString());
     }
 
-    public void poziomBohatera(Postac znalezionyBohater) {
-        System.out.println(Informacje.LEVEL_BOHATERA.getWiadomosc());
+    public void heroLevel(Champion foundHero) {
+        System.out.println(Informations.HERO_LEVEL.getMessage());
         int level;
         while (true) {
-            System.out.println("Wpisz \"/return\" aby wrócić lub" +
-                    "\nWprowadź liczbę od 1 do 18:");
+            System.out.println("Input \"/return\" to return or" +
+                    "\nEnter a number from 1 to 18:");
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("/return")) {
                 break;
@@ -252,431 +252,423 @@ public class App {
                     if (level < 1 || level > 18) {
                         throw new NumberFormatException();
                     } else {
-                        resetujStatystyki(znalezionyBohater, znalezionyBohater.getPoziom());
-                        System.out.println("\nPomyślnie zmieniłeś poziom postaci! Aktualny poziom to: " + level + "\n");
-                        znalezionyBohater.setPoziom(level);
-                        if (znalezionyBohater.getPoziom() == 1) {
-                            level = znalezionyBohater.getPoziom();
+                        statisticsReset(foundHero, foundHero.getLevel());
+                        System.out.println("\nYou have successfully changed your character's level! The current level is: " + level + "\n");
+                        foundHero.setLevel(level);
+                        if (foundHero.getLevel() == 1) {
+                            level = foundHero.getLevel();
                         } else {
-                            level = znalezionyBohater.getPoziom() - 1;
+                            level = foundHero.getLevel() - 1;
                         }
-                        znalezionyBohater.getStatystyki().setHp((int) (znalezionyBohater.getStatystyki().getHp() + (znalezionyBohater.getSkalowanie().getSkalowanieHP() * level)));
-                        znalezionyBohater.getStatystyki().setMana((int) (znalezionyBohater.getStatystyki().getMana() + (znalezionyBohater.getSkalowanie().getSkalowanieMany() * level)));
-                        znalezionyBohater.getStatystyki().setObrazeniaOdAtaku((int) (znalezionyBohater.getStatystyki().getObrazeniaOdAtaku() + (znalezionyBohater.getSkalowanie().getSkalowanieAD() * level)));
-                        znalezionyBohater.getStatystyki().setPancerz((int) (znalezionyBohater.getStatystyki().getPancerz() + (znalezionyBohater.getSkalowanie().getSkalowaniePancerz() * level)));
-                        znalezionyBohater.getStatystyki().setOdpornoscNaMagie((int) (znalezionyBohater.getStatystyki().getOdpornoscNaMagie() + (znalezionyBohater.getSkalowanie().getSkalowanieMR() * level)));
-                        znalezionyBohater.getStatystyki().setPredkoscAtaku((znalezionyBohater.getStatystyki().getPredkoscAtaku() + (znalezionyBohater.getSkalowanie().getSkalowanieAS() * level)));
+                        foundHero.getStatystyki().setHp((int) (foundHero.getStatystyki().getHp() + (foundHero.getSkalowanie().getHpScaling() * level)));
+                        foundHero.getStatystyki().setMana((int) (foundHero.getStatystyki().getMana() + (foundHero.getSkalowanie().getManaScaling() * level)));
+                        foundHero.getStatystyki().setPhysicalDamage((int) (foundHero.getStatystyki().getPhysicalDamage() + (foundHero.getSkalowanie().getAdScaling() * level)));
+                        foundHero.getStatystyki().setArmor((int) (foundHero.getStatystyki().getArmor() + (foundHero.getSkalowanie().getArmorScaling() * level)));
+                        foundHero.getStatystyki().setMagicRes((int) (foundHero.getStatystyki().getMagicRes() + (foundHero.getSkalowanie().getMrScaling() * level)));
+                        foundHero.getStatystyki().setAttackSpeed((foundHero.getStatystyki().getAttackSpeed() + (foundHero.getSkalowanie().getAsScaling() * level)));
                     }
                     break;
                 } catch (NumberFormatException e) {
-                    System.out.println("Wprowadzono złą liczbę! Pamiętaj że poziom bohatera może być 1-18");
+                    System.out.println("Wrong number entered! Remember that the hero's level can be 1-18");
                 }
             }
         }
     }
 
-    public void resetujStatystyki(Postac znalezionyBohater, int poziom) {
-        poziom -= 1;
-        znalezionyBohater.getStatystyki().setHp((int) (znalezionyBohater.getStatystyki().getHp() - (znalezionyBohater.getSkalowanie().getSkalowanieHP() * poziom)));
-        znalezionyBohater.getStatystyki().setMana((int) (znalezionyBohater.getStatystyki().getMana() - (znalezionyBohater.getSkalowanie().getSkalowanieMany() * poziom)));
-        znalezionyBohater.getStatystyki().setObrazeniaOdAtaku((int) (znalezionyBohater.getStatystyki().getObrazeniaOdAtaku() - (znalezionyBohater.getSkalowanie().getSkalowanieAD() * poziom)));
-        znalezionyBohater.getStatystyki().setPancerz((int) (znalezionyBohater.getStatystyki().getPancerz() - (znalezionyBohater.getSkalowanie().getSkalowaniePancerz() * poziom)));
-        znalezionyBohater.getStatystyki().setOdpornoscNaMagie((int) (znalezionyBohater.getStatystyki().getOdpornoscNaMagie() - (znalezionyBohater.getSkalowanie().getSkalowanieMR() * poziom)));
-        znalezionyBohater.getStatystyki().setPredkoscAtaku((znalezionyBohater.getStatystyki().getPredkoscAtaku() - (znalezionyBohater.getSkalowanie().getSkalowanieAS() * poziom)));
+    public void statisticsReset(Champion heroFound, int level) {
+        level -= 1;
+        heroFound.getStatystyki().setHp((int) (heroFound.getStatystyki().getHp() - (heroFound.getSkalowanie().getHpScaling() * level)));
+        heroFound.getStatystyki().setMana((int) (heroFound.getStatystyki().getMana() - (heroFound.getSkalowanie().getManaScaling() * level)));
+        heroFound.getStatystyki().setPhysicalDamage((int) (heroFound.getStatystyki().getPhysicalDamage() - (heroFound.getSkalowanie().getAdScaling() * level)));
+        heroFound.getStatystyki().setArmor((int) (heroFound.getStatystyki().getArmor() - (heroFound.getSkalowanie().getArmorScaling() * level)));
+        heroFound.getStatystyki().setMagicRes((int) (heroFound.getStatystyki().getMagicRes() - (heroFound.getSkalowanie().getMrScaling() * level)));
+        heroFound.getStatystyki().setAttackSpeed((heroFound.getStatystyki().getAttackSpeed() - (heroFound.getSkalowanie().getAsScaling() * level)));
     }
 
 
-    public void umiejetnoscQ(Postac znalezionyBohater) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        System.out.println("Umiejętność pierwsza: " + znalezionyBohater.getUmiejetnoscPierwsza().getNazwa());
-        System.out.println("Opis: " + znalezionyBohater.getUmiejetnoscPierwsza().getOpis());
-        BazoweObrazenia Q = znalezionyBohater.getUmiejetnoscPierwsza().getBazoweObrazenia();
-        System.out.println("Obrazenia bazowe bez skalowania z aktualnym AP/AD postaci:");
+    public void abilityQ(Champion heroFound) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        System.out.println("First Ability: " + heroFound.getUmiejetnoscPierwsza().getName());
+        System.out.println("Description: " + heroFound.getUmiejetnoscPierwsza().getDescription());
+        Base_Damage Q = heroFound.getUmiejetnoscPierwsza().getBaseDamage();
+        System.out.println("Base damage:");
         for (int i = 1; i <= 5; i++) {
             Integer dmg = (Integer) Q.getClass().getMethod("getLvl" + i).invoke(Q);
-            System.out.println("Lvl " + i + " bez skalowania: " + dmg);
-            System.out.println("Lvl " + i + " ze skalowaniem: " + (dmg + (znalezionyBohater.getUmiejetnoscPierwsza().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
+            System.out.println("Lvl " + i + " without scaling: " + dmg);
+            System.out.println("Lvl " + i + " with scaling: " + (dmg + (heroFound.getUmiejetnoscPierwsza().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility())));
         }
     }
 
-    public void umiejetnoscW(Postac znalezionyBohater) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void abilityW(Champion heroFound) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         System.out.println();
-        System.out.println("Umiejętność Druga: " + znalezionyBohater.getUmiejetnoscDruga().getNazwa());
-        System.out.println("Opis: " + znalezionyBohater.getUmiejetnoscDruga().getOpis());
-        BazoweObrazenia W = znalezionyBohater.getUmiejetnoscDruga().getBazoweObrazenia();
-        System.out.println("Obrazenia bazowe bez skalowania z aktualnym AP/AD postaci:");
+        System.out.println("Second Ability: " + heroFound.getUmiejetnoscDruga().getName());
+        System.out.println("Description: " + heroFound.getUmiejetnoscDruga().getDescription());
+        Base_Damage W = heroFound.getUmiejetnoscDruga().getBaseDamage();
+        System.out.println("Base damage:");
         for (int i = 1; i <= 5; i++) {
             Integer dmg = (Integer) W.getClass().getMethod("getLvl" + i).invoke(W);
-            System.out.println("Lvl " + i + " bez skalowania: " + dmg);
-            System.out.println("Lvl " + i + " ze skalowaniem: " + (dmg + (znalezionyBohater.getUmiejetnoscDruga().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
+            System.out.println("Lvl " + i + " without scaling: " + dmg);
+            System.out.println("Lvl " + i + " with scaling: " + (dmg + (heroFound.getUmiejetnoscDruga().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility())));
         }
     }
 
-    public void umiejetnoscE(Postac znalezionyBohater) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void abilityE(Champion heroFound) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         System.out.println();
-        System.out.println("Umiejętność Trzecia: " + znalezionyBohater.getUmiejetnoscTrzecia().getNazwa());
-        System.out.println("Opis: " + znalezionyBohater.getUmiejetnoscTrzecia().getOpis());
-        BazoweObrazenia E = znalezionyBohater.getUmiejetnoscTrzecia().getBazoweObrazenia();
-        System.out.println("Obrazenia bazowe bez skalowania z aktualnym AP/AD postaci:");
+        System.out.println("Third Ability: " + heroFound.getUmiejetnoscTrzecia().getName());
+        System.out.println("Description: " + heroFound.getUmiejetnoscTrzecia().getDescription());
+        Base_Damage E = heroFound.getUmiejetnoscTrzecia().getBaseDamage();
+        System.out.println("Base damage:");
         for (int i = 1; i <= 5; i++) {
             Integer dmg = (Integer) E.getClass().getMethod("getLvl" + i).invoke(E);
-            System.out.println("Lvl " + i + " bez skalowania: " + dmg);
-            if (znalezionyBohater.getUmiejetnoscTrzecia().getSkalowanieMocyUmiejetnosci() == 0) {
-                System.out.println("Lvl " + i + " ze skalowaniem(bezOblodzenia): " + (dmg + (znalezionyBohater.getUmiejetnoscTrzecia().getSkalowanieMocyUmiejetnosciBezOblodzenia() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
-                System.out.println("Lvl " + i + " ze skalowaniem(oblodzenie): " + (dmg + (znalezionyBohater.getUmiejetnoscTrzecia().getSkalowanieMocyUmiejetnosciZOblodzeniem() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
+            System.out.println("Lvl " + i + " without scaling: " + dmg);
+            if (heroFound.getUmiejetnoscTrzecia().getAbilityPowerScaling() == 0) {
+                System.out.println("Lvl " + i + " with scaling(without frozen): " + (dmg + (heroFound.getUmiejetnoscTrzecia().getAbilityPowerScalingWithAniviaBoost() * heroFound.getStatystyki().getPowerAbility())));
+                System.out.println("Lvl " + i + " with scaling(frozen): " + (dmg + (heroFound.getUmiejetnoscTrzecia().getAbilityPowerScalingWithoutAniviaBoost() * heroFound.getStatystyki().getPowerAbility())));
 
             } else {
-                System.out.println("Lvl " + i + " ze skalowaniem: " + (dmg + (znalezionyBohater.getUmiejetnoscTrzecia().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
+                System.out.println("Lvl " + i + " with scaling: " + (dmg + (heroFound.getUmiejetnoscTrzecia().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility())));
             }
         }
     }
 
-    public void umiejetnoscR(Postac znalezionyBohater) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void abilityR(Champion heroFound) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         System.out.println();
-        System.out.println("Umiejętność Czwarta: " + znalezionyBohater.getUmiejetnoscCzwarta().getNazwa());
-        System.out.println("Opis: " + znalezionyBohater.getUmiejetnoscCzwarta().getOpis());
-        BazoweObrazenia R = znalezionyBohater.getUmiejetnoscCzwarta().getBazoweObrazenia();
-        System.out.println("Obrazenia bazowe bez skalowania z aktualnym AP/AD postaci:");
+        System.out.println("Fourth Ability: " + heroFound.getUmiejetnoscCzwarta().getName());
+        System.out.println("Description: " + heroFound.getUmiejetnoscCzwarta().getDescription());
+        Base_Damage R = heroFound.getUmiejetnoscCzwarta().getBaseDamage();
+        System.out.println("Base damage:");
         for (int i = 1; i <= 3; i++) {
             Integer dmg = (Integer) R.getClass().getMethod("getLvl" + i).invoke(R);
-            System.out.println("Lvl " + i + " bez skalowania: " + dmg);
-            System.out.println("Lvl " + i + " ze skalowaniem: " + (dmg + (znalezionyBohater.getUmiejetnoscCzwarta().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci())));
+            System.out.println("Lvl " + i + " without scaling " + dmg);
+            System.out.println("Lvl " + i + " with scaling " + (dmg + (heroFound.getUmiejetnoscCzwarta().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility())));
         }
         System.out.println();
     }
 
-    public void umiejetnoscPasywna(Postac znalezionyBohater) {
-        System.out.println("Umiejętność pasywna: " + znalezionyBohater.getUmiejetnoscPasywna().getNazwa());
-        System.out.println("Bonus umiejętności pasywnej: " + znalezionyBohater.getUmiejetnoscPasywna().getOpis());
+    public void passiveAbility(Champion heroFound) {
+        System.out.println("Passive Ability " + heroFound.getUmiejetnoscPasywna().getName());
+        System.out.println("Passive Ability bonus " + heroFound.getUmiejetnoscPasywna().getDescription());
     }
 
-    public void ekwipunekBohatera(Postac znalezionyBohater) {
-        System.out.println(Informacje.INFORMACJA_O_PRZEDMIOTACH.getWiadomosc());
-        String wybierzPrzedmiot = scanner.nextLine();
-        Wybor wybor = Wybor.get(wybierzPrzedmiot);
-        while (wybor != Wybor.RETURN) {
-            switch (wybor) {
-                case ITEMY:
-                    pokazPrzedmioty();
-                    System.out.println(wybor.getWiadomosc());
+    public void heroInventory(Champion heroFound) {
+        System.out.println(Informations.ITEMS_INFO.getMessage());
+        String itemChoice = scanner.nextLine();
+        Choice choice = Choice.get(itemChoice);
+        while (choice != Choice.RETURN) {
+            switch (choice) {
+                case ITEMS:
+                    itemShow();
+                    System.out.println(choice.getMessage());
                     break;
-                case OTWORZ_EKWIPUNEK:
-                    pokazywanieEkwipunku();
+                case OPEN_INVENTORY:
+                    showInventory();
                     break;
-                case ZALOZ_PRZEDMIOT:
-                    zakladanieEkwipunku(znalezionyBohater);
+                case EQUIP_ITEMS:
+                    equipInventory(heroFound);
                     break;
-                case ZDEJMIJ_PRZEDMIOT:
-                    zdejmowanieEkwipunku(znalezionyBohater);
+                case REMOVE_ITEM:
+                    itemDelete(heroFound);
+                    break;
                 case EXIT:
-                    System.out.println(wybor.getWiadomosc());
+                    System.out.println(choice.getMessage());
                     System.exit(1);
             }
-            System.out.println(Informacje.INFORMACJA_O_PRZEDMIOTACH.getWiadomosc());
-            wybierzPrzedmiot = scanner.nextLine();
-            wybor = Wybor.get(wybierzPrzedmiot);
+            System.out.println(Informations.ITEMS_INFO.getMessage());
+            itemChoice = scanner.nextLine();
+            choice = Choice.get(itemChoice);
         }
     }
 
-    public void zakladanieEkwipunku(Postac znalezionyBohater) {
-        System.out.println("Wpisz nazwę przedmiotu którą chcesz wybrać!");
-        String wybierzItem = scanner.nextLine();
-        Przedmioty znalezionyPrzedmiot = szukajPrzedmiotow(wybierzItem);
-        if (znalezionyPrzedmiot != null) {
-            znalezionyPrzedmiot(znalezionyPrzedmiot);
-            System.out.println(znalezionyPrzedmiot);
-            HashMap<String, String> ekwipunek = ekwipunekBohatera.getOrDefault(znalezionyBohater.getImie(), new HashMap<>());
-            ekwipunek.put(znalezionyPrzedmiot.nazwa(), znalezionyPrzedmiot.typ());
-            ekwipunekBohatera.put(znalezionyBohater.getImie(), ekwipunek);
-            dodawanieStatystykDoBohatera(znalezionyBohater, znalezionyPrzedmiot);
+    public void equipInventory(Champion heroFound) {
+        System.out.println("Input item name!");
+        String itemChoice = scanner.nextLine();
+        Items itemFound = findItem(itemChoice);
+        if (itemFound != null) {
+            itemFound(itemFound);
+            System.out.println(itemFound);
+            HashMap<String, String> ekwipunek = championInventory.getOrDefault(heroFound.getName(), new HashMap<>());
+            ekwipunek.put(itemFound.name(), itemFound.type());
+            championInventory.put(heroFound.getName(), ekwipunek);
+            addingStatistics(heroFound, itemFound);
         }
     }
 
-    public void dodawanieStatystykDoBohatera(Postac znalezionyBohater, Przedmioty znalezionyPrzedmiot) {
-        znalezionyBohater.getStatystyki().setHp((znalezionyBohater.getStatystyki().getHp() + znalezionyPrzedmiot.hp()));
-        znalezionyBohater.getStatystyki().setPredkoscAtaku((znalezionyBohater.getStatystyki().getPredkoscAtaku() + znalezionyPrzedmiot.predkoscAtakuBonus()));
-        znalezionyBohater.getStatystyki().setPredkoscRuchu((znalezionyBohater.getStatystyki().getPredkoscRuchu() + znalezionyPrzedmiot.predkoscRuchu()));
-        znalezionyBohater.getStatystyki().setMocUmiejetnosci((znalezionyBohater.getStatystyki().getMocUmiejetnosci() + znalezionyPrzedmiot.mocUmiejetnosci()));
-        znalezionyBohater.getStatystyki().setMana((znalezionyBohater.getStatystyki().getMana() + znalezionyPrzedmiot.mana()));
-        znalezionyBohater.getStatystyki().setPrzyspieszenieUmiejetnosci(znalezionyBohater.getStatystyki().getPrzyspieszenieUmiejetnosci() + znalezionyPrzedmiot.przyspieszenieUmiejetnosci());
-        znalezionyBohater.getStatystyki().setSzansaNaTrafienieKrytyczne(znalezionyBohater.getStatystyki().getSzansaNaTrafienieKrytyczne() + znalezionyPrzedmiot.szansaNaTrafienieKrytyczne());
-        znalezionyBohater.getStatystyki().setObrazeniaOdAtaku((znalezionyBohater.getStatystyki().getObrazeniaOdAtaku() + znalezionyPrzedmiot.obrazeniaOdAtaku()));
-        znalezionyBohater.getStatystyki().setOdpornoscNaMagie((znalezionyBohater.getStatystyki().getOdpornoscNaMagie() + znalezionyPrzedmiot.odpornoscNaMagie()));
+    public void addingStatistics(Champion heroFound, Items itemFound) {
+        heroFound.getStatystyki().setHp((heroFound.getStatystyki().getHp() + itemFound.hp()));
+        heroFound.getStatystyki().setAttackSpeed((heroFound.getStatystyki().getAttackSpeed() + itemFound.attackSpeed()));
+        heroFound.getStatystyki().setMovementSpeed((heroFound.getStatystyki().getMovementSpeed() + itemFound.movementSpeed()));
+        heroFound.getStatystyki().setPowerAbility((heroFound.getStatystyki().getPowerAbility() + itemFound.abilityPower()));
+        heroFound.getStatystyki().setMana((heroFound.getStatystyki().getMana() + itemFound.mana()));
+        heroFound.getStatystyki().setCooldownReduction(heroFound.getStatystyki().getCooldownReduction() + itemFound.cooldownReduction());
+        heroFound.getStatystyki().setCritChance(heroFound.getStatystyki().getCritChance() + itemFound.critChance());
+        heroFound.getStatystyki().setPhysicalDamage((heroFound.getStatystyki().getPhysicalDamage() + itemFound.physicalDamage()));
+        heroFound.getStatystyki().setMagicRes((heroFound.getStatystyki().getMagicRes() + itemFound.magicResistance()));
     }
 
-    public void pokazywanieEkwipunku() {
-        System.out.println("Ekwipunek bohatera " + znalezionyBohater.getImie() + ":");
+    public void showInventory() {
+        System.out.println("Champion inventory " + heroFound.getName() + ":");
         // KOD DO WYŚWIETLENIA POSTACI
-        HashMap<String, String> ekwipunek = ekwipunekBohatera.get(znalezionyBohater.getImie());
-        if (ekwipunek == null || ekwipunek.isEmpty()) {
-            System.out.println("Ekwipunek jest pusty.");
+        HashMap<String, String> inventory = championInventory.get(heroFound.getName());
+        if (inventory == null || inventory.isEmpty()) {
+            System.out.println("Inventory is empty");
             return;
         }
-        for (String nazwaPrzedmiotu : ekwipunek.keySet()) {
-            String typPrzedmiotu = ekwipunek.get(nazwaPrzedmiotu);
-            System.out.println("Nazwa: " + nazwaPrzedmiotu);
-            System.out.println("Typ: " + typPrzedmiotu);
+        for (String itemName : inventory.keySet()) {
+            String itemType = inventory.get(itemName);
+            System.out.println("Name: " + itemName);
+            System.out.println("Type: " + itemType);
         }
     }
 
-    public void zdejmowanieEkwipunku(Postac znalezionyBohater) {
-        System.out.println("Który przedmiot chcesz zdjąć?");
-        String nazwaPrzedmiotu = scanner.nextLine().toLowerCase();
-        Przedmioty znalezionyPrzedmiot = szukajPrzedmiotow(nazwaPrzedmiotu);
+    public void itemDelete(Champion heroFound) {
+        System.out.println("Which item you want to remove?");
+        String itemName = scanner.nextLine().toLowerCase();
+        Items itemFound = findItem(itemName);
         //Szukamy przedmiotu w ekwipunku bohatera
-        HashMap<String, String> ekwipunek = ekwipunekBohatera.get(znalezionyBohater.getImie());
-        if (ekwipunek == null || !ekwipunek.containsKey(nazwaPrzedmiotu)) {
-            System.out.println("Nie masz takiego przedmiotu w ekwipunku.");
+        HashMap<String, String> inventory = championInventory.get(heroFound.getName());
+        if (inventory == null || !inventory.containsKey(itemName)) {
+            System.out.println("You do not have such an item in your inventory.");
             return;
         }
-        String typPrzedmiotu = ekwipunek.get(nazwaPrzedmiotu);
-        ekwipunek.remove(nazwaPrzedmiotu);
-        ekwipunekBohatera.put(znalezionyBohater.getImie(), ekwipunek);
-        System.out.println("Zdjęto przedmiot:");
-        System.out.println("Nazwa: " + nazwaPrzedmiotu);
-        System.out.println("Typ: " + typPrzedmiotu);
-        usuwanieStatystykZBohatera(znalezionyBohater, znalezionyPrzedmiot);
+        String itemType = inventory.get(itemName);
+        inventory.remove(itemName);
+        championInventory.put(heroFound.getName(), inventory);
+        System.out.println("Item removed:");
+        System.out.println("Name: " + itemName);
+        System.out.println("Type: " + itemType);
+        removeStatistics(heroFound, itemFound);
     }
 
-    public void usuwanieStatystykZBohatera(Postac znalezionyBohater, Przedmioty znalezionyPrzedmiot) {
-        znalezionyBohater.getStatystyki().setHp((znalezionyBohater.getStatystyki().getHp() - znalezionyPrzedmiot.hp()));
-        znalezionyBohater.getStatystyki().setPredkoscAtaku((znalezionyBohater.getStatystyki().getPredkoscAtaku() - znalezionyPrzedmiot.predkoscAtakuBonus()));
-        znalezionyBohater.getStatystyki().setPredkoscRuchu((znalezionyBohater.getStatystyki().getPredkoscRuchu() - znalezionyPrzedmiot.predkoscRuchu()));
-        znalezionyBohater.getStatystyki().setMocUmiejetnosci((znalezionyBohater.getStatystyki().getMocUmiejetnosci() - znalezionyPrzedmiot.mocUmiejetnosci()));
-        znalezionyBohater.getStatystyki().setMana((znalezionyBohater.getStatystyki().getMana() + znalezionyPrzedmiot.mana()));
-        znalezionyBohater.getStatystyki().setPrzyspieszenieUmiejetnosci(znalezionyBohater.getStatystyki().getPrzyspieszenieUmiejetnosci() - znalezionyPrzedmiot.przyspieszenieUmiejetnosci());
-        znalezionyBohater.getStatystyki().setSzansaNaTrafienieKrytyczne(znalezionyBohater.getStatystyki().getSzansaNaTrafienieKrytyczne() - znalezionyPrzedmiot.szansaNaTrafienieKrytyczne());
-        znalezionyBohater.getStatystyki().setObrazeniaOdAtaku((znalezionyBohater.getStatystyki().getObrazeniaOdAtaku() - znalezionyPrzedmiot.obrazeniaOdAtaku()));
-        znalezionyBohater.getStatystyki().setOdpornoscNaMagie((znalezionyBohater.getStatystyki().getOdpornoscNaMagie() - znalezionyPrzedmiot.odpornoscNaMagie()));
+    public void removeStatistics(Champion heroFound, Items itemFound) {
+        heroFound.getStatystyki().setHp((heroFound.getStatystyki().getHp() - itemFound.hp()));
+        heroFound.getStatystyki().setAttackSpeed((heroFound.getStatystyki().getAttackSpeed() - itemFound.attackSpeed()));
+        heroFound.getStatystyki().setMovementSpeed((heroFound.getStatystyki().getMovementSpeed() - itemFound.movementSpeed()));
+        heroFound.getStatystyki().setPowerAbility((heroFound.getStatystyki().getPowerAbility() - itemFound.abilityPower()));
+        heroFound.getStatystyki().setMana((heroFound.getStatystyki().getMana() + itemFound.mana()));
+        heroFound.getStatystyki().setCooldownReduction(heroFound.getStatystyki().getCooldownReduction() - itemFound.cooldownReduction());
+        heroFound.getStatystyki().setCritChance(heroFound.getStatystyki().getCritChance() - itemFound.critChance());
+        heroFound.getStatystyki().setPhysicalDamage((heroFound.getStatystyki().getPhysicalDamage() - itemFound.physicalDamage()));
+        heroFound.getStatystyki().setMagicRes((heroFound.getStatystyki().getMagicRes() - itemFound.magicResistance()));
     }
 
-    public void testUmiejetnosci(Postac znalezionyBohater) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
-        System.out.println(Informacje.OPCJE_TESTU_OBRAZEN.getWiadomosc());
-        String wybierzPrzeciwnika = scanner.nextLine();
-        Postac przeciwnik;
-        String umiejetnosci;
+    public void abilityTest(Champion heroFound) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        System.out.println(Informations.DAMAGE_TEST.getMessage());
+        String enemyChoice = scanner.nextLine();
+        Champion enemy;
+        String ability;
         HashMap<String, Integer> skill;
-        Wybor wybor = Wybor.get(wybierzPrzeciwnika);
-        while (wybor != Wybor.RETURN) {
-            switch (wybor) {
-                case CHAMPIONS -> pokazBohaterow();
-                case WYBIERZ_PRZECIWNIKA -> {
-                    przeciwnik = wybierzPostac(znalezionyBohater);
-                    pokazStatystykiOrazUmiejetnosciBohatera(przeciwnik);
-                    wiadomoscPojedynku(znalezionyBohater, przeciwnik);
+        Choice choice = Choice.get(enemyChoice);
+        while (choice != Choice.RETURN) {
+            switch (choice) {
+                case CHAMPIONS -> heroShow();
+                case ENEMY_CHOICE -> {
+                    enemy = heroChoice(heroFound);
+                    showStatsAndSkills(enemy);
+                    duelInfo(heroFound, enemy);
                 }
                 //METODA POJEDYNKU
-                case LOSUJ_PRZECIWNIKA -> {
-                    przeciwnik = wylosujPrzeciwnika(znalezionyBohater);
-                    pokazStatystykiOrazUmiejetnosciBohatera(przeciwnik);
-                    wiadomoscPojedynku(znalezionyBohater, przeciwnik);
+                case RANDOM_OPPONENT -> {
+                    enemy = randomOpponent(heroFound);
+                    showStatsAndSkills(enemy);
+                    duelInfo(heroFound, enemy);
                 }
 
                 //METODA POJEDYNKU
-                case STWORZ_KUKLE_TRENINGOWA -> {
-                    przeciwnik = tworzenieKukly(znalezionyBohater);
-                    System.out.println(przeciwnik.getStatystyki().toString1());
-                    umiejetnosci = wpiszUmiejetnosc();
-                    if (umiejetnosci != null) {
-                        liczObrazenia(umiejetnosci);
-                        skill = liczObrazenia(umiejetnosci);
-                        umiejetnoscObliczenia(skill, znalezionyBohater, przeciwnik);
+                case TRAINING_DUMMY -> {
+                    enemy = createTrainingDummy(heroFound);
+                    System.out.println(enemy.getStatystyki().toString1());
+                    ability = abilityChoice();
+                    if (ability != null) {
+                        damageCalculation(ability);
+                        skill = damageCalculation(ability);
+                        abilityDamage(skill, heroFound, enemy);
                     }
                 }
                 case EXIT -> {
-                    System.out.println(wybor.getWiadomosc());
+                    System.out.println(choice.getMessage());
                     System.exit(1);
                 }
-                case NIEZNANA_KOMENDA -> System.out.println(wybor.getWiadomosc());
+                case UNKNOWN_COMMAND -> System.out.println(choice.getMessage());
             }
 
 
-            System.out.println(Informacje.OPCJE_TESTU_OBRAZEN.getWiadomosc());
-            wybierzPrzeciwnika = scanner.nextLine();
-            wybor = Wybor.get(wybierzPrzeciwnika);
+            System.out.println(Informations.DAMAGE_TEST.getMessage());
+            enemyChoice = scanner.nextLine();
+            choice = Choice.get(enemyChoice);
         }
     }
-    public void wiadomoscPojedynku(Postac znalezionyBohater, Postac przeciwnik) {
-        System.out.println("Pojedynek: " +
-                "\n" + znalezionyBohater.getImie() + " vs " + przeciwnik.getImie());
+    public void duelInfo(Champion heroFound, Champion enemy) {
+        System.out.println("Duel: " +
+                "\n" + heroFound.getName() + " vs " + enemy.getName());
         System.out.println("Teraz jak powinien wyglądać pojedynek?");
     }
 
-    public Postac wylosujPrzeciwnika(Postac znalezionyBohater) {
-        List<Postac> bohaterowie = new ArrayList<>();
-        for (Postac postac : postacie) {
-            if (!postac.getImie().equals(znalezionyBohater.getImie())) {
-                bohaterowie.add(postac);
+    public Champion randomOpponent(Champion heroFound) {
+        List<Champion> champions = new ArrayList<>();
+        for (Champion champion : this.champions) {
+            if (!champion.getName().equals(heroFound.getName())) {
+                champions.add(champion);
             }
         }
         Random random = new Random();
-        return bohaterowie.get(random.nextInt(bohaterowie.size()));
+        return champions.get(random.nextInt(champions.size()));
     }
 
-    public Postac wybierzPostac(Postac znalezionyBohater) {
+    public Champion heroChoice(Champion heroFound) {
         while (true) {
-            System.out.println("Wybierz imie postaci z którą chcesz walczyć!");
-            String wyborPostaci = scanner.nextLine().toLowerCase();
+            System.out.println("\nChoose the name of the character you want to fight!");
+            String heroChoice = scanner.nextLine().toLowerCase();
 
-            for (Postac postac : postacie) {
-                if (postac.getImie().toLowerCase().equals(wyborPostaci) && !postac.equals(znalezionyBohater)) {
-                    return postac;
+            for (Champion champion : champions) {
+                if (champion.getName().toLowerCase().equals(heroChoice) && !champion.equals(heroFound)) {
+                    return champion;
                 }
             }
-            System.out.println("Wpisałeś złą nazwę postaci, bądź taką samą którą wybrałeś!" +
-                               "\nSpróbuj jeszcze raz!");
+            System.out.println("\nYou entered the wrong name of the character, or the same as yours!\nTry again!");
         }
     }
-    public Postac tworzenieKukly(Postac znalezionyBohater) {
-        Statystyki statystykiKukly = new Statystyki(znalezionyBohater.getStatystyki().getHp(),
-                znalezionyBohater.getStatystyki().getPancerz(),
-                znalezionyBohater.getStatystyki().getOdpornoscNaMagie());
-        Postac kukla = new Postac(
-                "Kukla",
+    public Champion createTrainingDummy(Champion heroFound) {
+        Statistics statisticsDummy = new Statistics(heroFound.getStatystyki().getHp(),
+                heroFound.getStatystyki().getArmor(),
+                heroFound.getStatystyki().getMagicRes());
+        Champion dummy = new Champion(
+                "Dummy",
                 1,
-                statystykiKukly,
-                znalezionyBohater.getUmiejetnoscPierwsza(),
-                znalezionyBohater.getUmiejetnoscDruga(),
-                znalezionyBohater.getUmiejetnoscTrzecia(),
-                znalezionyBohater.getUmiejetnoscCzwarta(),
-                znalezionyBohater.getUmiejetnoscPasywna(),
-                znalezionyBohater.getSkalowanie()
+                statisticsDummy,
+                heroFound.getUmiejetnoscPierwsza(),
+                heroFound.getUmiejetnoscDruga(),
+                heroFound.getUmiejetnoscTrzecia(),
+                heroFound.getUmiejetnoscCzwarta(),
+                heroFound.getUmiejetnoscPasywna(),
+                heroFound.getSkalowanie()
         );
         while (true) {
             try {
-            //    System.out.println("Wprowadź całkowitą liczbę reprezentującą życie kukły");
-             //   int statystyka = scanner.nextInt();
-                kukla.getStatystyki().setHp(15);
-
-             //   System.out.println("Wprowadź całkowitą liczbę reprezentującą pancerz kukły");
-             //   statystyka = scanner.nextInt();
-                kukla.getStatystyki().setPancerz(15);
-
-                System.out.println("Wprowadź całkowitą liczbę reprezentującą odporność na magie kukły");
+                dummy.getStatystyki().setHp(15);
+                dummy.getStatystyki().setArmor(15);
+                System.out.println("Enter an integer representing the dummy's magic resistance");
                 int statystyka = scanner.nextInt();
-                kukla.getStatystyki().setOdpornoscNaMagie(statystyka);
+                dummy.getStatystyki().setMagicRes(statystyka);
                 scanner.nextLine();
-                return kukla;
+                return dummy;
             } catch (InputMismatchException e) {
-                System.out.println("Niepoprawny format liczby! Spróbuj jeszcze raz");
+                System.out.println("Invalid number format! try again");
                 scanner.next();
             }
         }
     }
-    public String wpiszUmiejetnosc() {
+    public String abilityChoice() {
         Scanner scanner = new Scanner(System.in);
-        String umiejetnosci;
-            System.out.println(Informacje.WZOR_DO_UMIEJETNOSCI.getWiadomosc());
-            umiejetnosci = scanner.nextLine();
+        String skills;
+            System.out.println(Informations.ABILITY_PATTERN.getMessage());
+            skills = scanner.nextLine();
             // Sprawdzanie minimalnej długości ciągu
-            if (umiejetnosci.length() < 3) {
-                System.out.println("Minimalna długość ciągu umiejętności to 3 znaki (1 litera i 1 cyfra " +
-                        "oddzielone spacją).");
+            if (skills.length() < 3) {
+                System.out.println("The minimum length of the skill string is 2 characters (1 letter and 1 number separated by a space).");
                 return null;
             }
             // Sprawdzanie maksymalnej długości ciągu
-            if (umiejetnosci.length() > 15) {
-                System.out.println("Maksymalna długość ciągu umiejętności to 15 znaków (4 litery i 4 cyfry " +
-                        "oddzielone spacją).");
+            if (skills.length() > 15) {
+                System.out.println("The maximum length of the skill string is 8 characters (4 letters and 4 numbers separated by a space).");
                 return null;
             }
             // Sprawdzanie unikalności liter
-            for (int i = 0; i < umiejetnosci.length(); i += 4) {
-                char litera = umiejetnosci.charAt(i);
-                if (umiejetnosci.indexOf(litera) != umiejetnosci.lastIndexOf(litera)) {
-                    System.out.println("Litera " + litera + " występuje więcej niż raz!");
+            for (int i = 0; i < skills.length(); i += 4) {
+                char litera = skills.charAt(i);
+                if (skills.indexOf(litera) != skills.lastIndexOf(litera)) {
+                    System.out.println("Letter " + litera + " occurs more than once!");
                     return null;
                 }
             }
             // Sprawdzanie liter i cyfr
-            String[] umiejetnosciArr = umiejetnosci.split(" ");
-            String litery = "QWER";
-            String cyfryQWE = "12345";
-            String cyfryR = "123";
-            for (int i = 0; i < umiejetnosciArr.length; i += 2) {
-                String litera = umiejetnosciArr[i];
-                String cyfra = umiejetnosciArr[i+1];
-                if (!litery.contains(litera)) {
-                    System.out.println("Nieprawidłowa litera " + litera);
+            String[] abilityArray = skills.split(" ");
+            String letters = "QWER";
+            String numbersQWE = "12345";
+            String numbersR = "123";
+            for (int i = 0; i < abilityArray.length; i += 2) {
+                String letter = abilityArray[i];
+                String number = abilityArray[i+1];
+                if (!letters.contains(letter)) {
+                    System.out.println("Wrong letter " + letter);
                     return null;
                 }
-                if (litera.equals("R")) {
-                    if (!cyfryR.contains(cyfra)) {
-                        System.out.println("Nieprawidłowa cyfra " + cyfra + " po literze " + litera);
+                if (letter.equals("R")) {
+                    if (!numbersR.contains(number)) {
+                        System.out.println("Wrong number: " + number + " after letter: " + letter);
                         return null;
                     }
                 } else {
-                    if (!cyfryQWE.contains(cyfra)) {
-                        System.out.println("Nieprawidłowa cyfra " + cyfra + " po literze " + litera);
+                    if (!numbersQWE.contains(number)) {
+                        System.out.println("Wrong number: " + number + " after letter: " + letter);
                         return null;
                     }
                 }
             }
-            System.out.println("Ciąg umiejętności jest prawidłowy.");
-            System.out.println("Wprowadzono poprawny string: " + umiejetnosci);
-            return umiejetnosci;
+            System.out.println("A valid string has been entered: " + skills);
+            return skills;
     }
-    public HashMap<String, Integer> liczObrazenia(String umiejetnosci) {
-        String[] skille = umiejetnosci.split(" ");
-        HashMap<String, Integer> umiejetnosc = new HashMap<>();
+    public HashMap<String, Integer> damageCalculation(String ability) {
+        String[] skille = ability.split(" ");
+        HashMap<String, Integer> skill = new HashMap<>();
         for (int i = 0; i < skille.length; i += 2) {
-            umiejetnosc.put(skille[i], Integer.valueOf(skille[i + 1]));
+            skill.put(skille[i], Integer.valueOf(skille[i + 1]));
         }
-        return umiejetnosc;
+        return skill;
     }
-    public void umiejetnoscObliczenia(HashMap<String, Integer> umiejetnosc, Postac znalezionyBohater, Postac przeciwnik) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void abilityDamage(HashMap<String, Integer> skill, Champion heroFound, Champion enemy) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
-        int obrazeniaOgolne = 0;
-        BazoweObrazenia Q = znalezionyBohater.getUmiejetnoscPierwsza().getBazoweObrazenia();
-        BazoweObrazenia W = znalezionyBohater.getUmiejetnoscDruga().getBazoweObrazenia();
-        BazoweObrazenia E = znalezionyBohater.getUmiejetnoscTrzecia().getBazoweObrazenia();
-        BazoweObrazenia R = znalezionyBohater.getUmiejetnoscCzwarta().getBazoweObrazenia();
-        System.out.println("Odporność na magie przeciwnika: " + przeciwnik.getStatystyki().getOdpornoscNaMagie());
+        int totalDamage = 0;
+        Base_Damage Q = heroFound.getUmiejetnoscPierwsza().getBaseDamage();
+        Base_Damage W = heroFound.getUmiejetnoscDruga().getBaseDamage();
+        Base_Damage E = heroFound.getUmiejetnoscTrzecia().getBaseDamage();
+        Base_Damage R = heroFound.getUmiejetnoscCzwarta().getBaseDamage();
+        System.out.println("Enemy magic resistance: " + enemy.getStatystyki().getMagicRes());
 
-        for (String key: umiejetnosc.keySet()) {
+        for (String key: skill.keySet()) {
             if (key.equalsIgnoreCase("Q")) {
-                System.out.println("Umiejętność: " + znalezionyBohater.getUmiejetnoscPierwsza().getNazwa() + " (Q)");
-                Integer dmg = (Integer) Q.getClass().getMethod("getLvl" + umiejetnosc.get(key)).invoke(Q);
-                int obrazenia = (int) (dmg + (znalezionyBohater.getUmiejetnoscPierwsza().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci()));
-                if (przeciwnik.getStatystyki().getOdpornoscNaMagie() > 0) {
-                    obrazenia = obrazenia / (1 + przeciwnik.getStatystyki().getOdpornoscNaMagie() / 100);
+                System.out.println("Ability: " + heroFound.getUmiejetnoscPierwsza().getName() + " (Q)");
+                Integer dmg = (Integer) Q.getClass().getMethod("getLvl" + skill.get(key)).invoke(Q);
+                int damage = (int) (dmg + (heroFound.getUmiejetnoscPierwsza().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility()));
+                if (enemy.getStatystyki().getMagicRes() > 0) {
+                    damage = damage / (1 + enemy.getStatystyki().getMagicRes() / 100);
                 }
-                System.out.println("Lvl " + umiejetnosc.get(key) + " ze skalowaniem: " + obrazenia);
-                obrazeniaOgolne += obrazenia;
+                System.out.println("Lvl " + skill.get(key) + " Damage: " + damage);
+                totalDamage += damage;
 
             }
             if (key.equalsIgnoreCase("W")) {
-                System.out.println("Umiejętność: " + znalezionyBohater.getUmiejetnoscDruga().getNazwa() + " (W)");
+                System.out.println("Ability: " + heroFound.getUmiejetnoscDruga().getName() + " (W)");
 
-                Integer dmg = (Integer) W.getClass().getMethod("getLvl" + umiejetnosc.get(key)).invoke(W);
-                int obrazenia = (int) (dmg + (znalezionyBohater.getUmiejetnoscDruga().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci()));
-                if (przeciwnik.getStatystyki().getOdpornoscNaMagie() > 0) {
-                    obrazenia = obrazenia / (1 + przeciwnik.getStatystyki().getOdpornoscNaMagie() / 100);
+                Integer dmg = (Integer) W.getClass().getMethod("getLvl" + skill.get(key)).invoke(W);
+                int damage = (int) (dmg + (heroFound.getUmiejetnoscDruga().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility()));
+                if (enemy.getStatystyki().getMagicRes() > 0) {
+                    damage = damage / (1 + enemy.getStatystyki().getMagicRes() / 100);
                 }
-                System.out.println("Lvl " + umiejetnosc.get(key) + " ze skalowaniem: " + obrazenia);
-                obrazeniaOgolne += obrazenia;
+                System.out.println("Lvl " + skill.get(key) + " Damage: " + damage);
+                totalDamage += damage;
             }
             if (key.equalsIgnoreCase("E")) {
-                System.out.println("Umiejętność: " + znalezionyBohater.getUmiejetnoscTrzecia().getNazwa() + " (E)");
+                System.out.println("Ability: " + heroFound.getUmiejetnoscTrzecia().getName() + " (E)");
 
-                Integer dmg = (Integer) E.getClass().getMethod("getLvl" + umiejetnosc.get(key)).invoke(E);
-                int obrazenia = (int) (dmg + (znalezionyBohater.getUmiejetnoscTrzecia().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci()));
-                if (przeciwnik.getStatystyki().getOdpornoscNaMagie() > 0) {
-                    obrazenia = obrazenia / (1 + przeciwnik.getStatystyki().getOdpornoscNaMagie() / 100);
+                Integer dmg = (Integer) E.getClass().getMethod("getLvl" + skill.get(key)).invoke(E);
+                int damage = (int) (dmg + (heroFound.getUmiejetnoscTrzecia().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility()));
+                if (enemy.getStatystyki().getMagicRes() > 0) {
+                    damage = damage / (1 + enemy.getStatystyki().getMagicRes() / 100);
                 }
-                System.out.println("Lvl " + umiejetnosc.get(key) + " ze skalowaniem: " + obrazenia);
-                obrazeniaOgolne += obrazenia;
+                System.out.println("Lvl " + skill.get(key) + " Damage: " + damage);
+                totalDamage += damage;
             }
             if (key.equalsIgnoreCase("R")) {
-                System.out.println("Umiejętność: " + znalezionyBohater.getUmiejetnoscCzwarta().getNazwa() + " (R)");
-                Integer dmg = (Integer) R.getClass().getMethod("getLvl" + umiejetnosc.get(key)).invoke(R);
-                int obrazenia = (int) (dmg + (znalezionyBohater.getUmiejetnoscCzwarta().getSkalowanieMocyUmiejetnosci() * znalezionyBohater.getStatystyki().getMocUmiejetnosci()));
-                if (przeciwnik.getStatystyki().getOdpornoscNaMagie() > 0) {
-                    obrazenia = obrazenia / (1 + przeciwnik.getStatystyki().getOdpornoscNaMagie() / 100);
+                System.out.println("Ability: " + heroFound.getUmiejetnoscCzwarta().getName() + " (R)");
+                Integer dmg = (Integer) R.getClass().getMethod("getLvl" + skill.get(key)).invoke(R);
+                int damage = (int) (dmg + (heroFound.getUmiejetnoscCzwarta().getAbilityPowerScaling() * heroFound.getStatystyki().getPowerAbility()));
+                if (enemy.getStatystyki().getMagicRes() > 0) {
+                    damage = damage / (1 + enemy.getStatystyki().getMagicRes() / 100);
                 }
-                System.out.println("Lvl " + umiejetnosc.get(key) + " ze skalowaniem: " + obrazenia);
-                obrazeniaOgolne += obrazenia;            }
+                System.out.println("Lvl " + skill.get(key) + " Damage: " + damage);
+                totalDamage += damage;
+            }
         }
-        System.out.println("Obrazenia łączne z tych umiejętności: " + obrazeniaOgolne);
+        System.out.println("Combined damage: " + totalDamage);
     }
 }
 

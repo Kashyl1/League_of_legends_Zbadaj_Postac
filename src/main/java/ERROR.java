@@ -7,13 +7,13 @@ public enum ERROR {
     INVALID_ITEM("Nie ma takiego przedmiotu w bazie danych o nazwie: "),
     UNKNOWN_COMMAND("Nie ma takiej komendy");
 
-    private final String wiadomosc;
+    private final String message;
 
-    ERROR(String wiadomosc) {
-        this.wiadomosc = wiadomosc;
+    ERROR(String message) {
+        this.message = message;
     }
 
-    public String getWiadomosc() {
-        return wiadomosc;
+    public String getMessage() {
+        return message;
     }
 }

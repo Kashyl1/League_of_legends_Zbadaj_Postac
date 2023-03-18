@@ -1,35 +1,35 @@
 {
   "postacie": [
     {
-      "imie": "Diana",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Diana",
+      "level": 1,
+      "statistics": {
         "hp": 640,
         "mana": 375,
-        "obrazeniaOdAtaku": 57,
-        "mocUmiejetnosci": 0,
-        "pancerz": 31,
-        "odpornoscNaMagie": 32,
-        "predkoscAtaku": 0.72,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 345
+        "physicalDamage": 57,
+        "abilityPower": 0,
+        "armor": 31,
+        "magicResistance": 32,
+        "attackSpeed": 0.72,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 345
       },
-      "skalowanie": {
-        "skalowanieHP" : 109,
-        "skalowanieMany" : 25,
-        "skalowanieAD": 3,
-        "skalowaniePancerz": 4.3,
-        "skalowanieMR": 2.05,
-        "skalowanieAS": 0.0217
+      "scaling": {
+        "hpScaling": 109,
+        "manaScaling": 25,
+        "adScaling": 3,
+        "armorScaling": 4.3,
+        "mrScaling": 2.05,
+        "asScaling": 0.0217
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Cios półksiężyca",
-        "opis": "Tworzy pocisk księżycowej energii w kształcie łuku, zadając obrażenia magiczne. Trafieni wrogowie zostają naznaczeni Księżycową Poświatą, która ujawnia ich na 3 sek., o ile nie byli ukryci.",
-        "skalowanieMocyUmiejetnosci": 0.7,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Crescent Strike",
+        "description": "Diana unleashes a bolt of lunar energy that travels in a counter-clockwise arc before exploding at the target location, \ngranting sight of the area for 0.5 seconds and dealing magic damage to enemies hit and afflicting them with Moonlight for 3 seconds, during which they are",
+        "apScaling": 0.7,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 95,
           "lvl3": 130,
@@ -37,11 +37,11 @@
           "lvl5": 200
         }
       },
-      "umiejetnoscDruga": {
-        "nazwa": "Księżycowa kaskada",
-        "opis": "Diana tworzy trzy orbitujące kule, które wybuchają przy zetknięciu z wrogami, zadając obrażenia obszarowe. Otrzymuje także tymczasową tarczę pochłaniającą obrażenia. Jeśli jej trzecia kula wybuchnie, tarcza zostanie wzmocniona.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Pale Cascade",
+        "description": "Diana grants herself a shield for up to 5 seconds and creates three spheres that orbit her for the same duration, \ndetonating upon contact with an enemy to deal magic damage to nearby enemies.",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 54,
           "lvl2": 90,
           "lvl3": 126,
@@ -49,11 +49,11 @@
           "lvl5": 198
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Lunarny skok",
-        "opis": "Staje się uosobieniem mściwego księżyca, doskakując do wroga i zadając obrażenia magiczne. Lunarny Skok nie ma czasu odnowienia, jeśli użyje się go do zaatakowania wroga naznaczonego Księżycową Poświatą. Efekt Księżycowej Poświaty zostanie usunięty ze wszystkich pozostałych wrogów niezależnie od tego, czy byli celem Lunarnego Skoku.",
-        "skalowanieMocyUmiejetnosci": 0.5,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Lunar Rush",
+        "description": "Diana dashes dashes to the target enemy's location, and upon completion, she deals them magic damage and consumes Moonlight Moonlight from all enemies. \nIf the target is within 400 range, Diana will dash through their location.",
+        "apScaling": 0.5,
+        "baseDamage": {
           "lvl1": 50,
           "lvl2": 70,
           "lvl3": 90,
@@ -61,62 +61,62 @@
           "lvl5": 130
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Zew księżyca",
-        "opis": "Diana ujawnia wszystkich pobliskich wrogów, przyciąga i spowalnia ich. Jeśli Diana przyciągnie co najmniej jednego wrogiego bohatera, po chwili opadnie na nią światło księżyca, zadając obrażenia magiczne na obszarze wokół niej. Obrażenia te zwiększają się za każdy dodatkowy przyciągnięty cel.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Moonfall",
+        "description": "Diana pulls in all nearby enemies, during which they are revealed, then slows them for 2 seconds.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 200,
           "lvl2": 300,
           "lvl3": 400
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Ostrze księżycowej poświaty",
-        "opis": "Każde co trzecie uderzenie zadaje pobliskim wrogom dodatkowe obrażenia magiczne. Po rzuceniu zaklęcia prędkość ataku Diany zwiększa się na 3 następne ataki."
+      "passiveAbility": {
+        "name": " Moonsilver Blade",
+        "description": "Diana basic attacks generate a stack of Moonsilver Blade for 3.5 seconds, refreshing on subsequent attacks and stacking up to 2 times. \nAt 2 stacks, Diana empowers her next basic attack to consume the stacks on-hit to additionally cleave nearby enemies, dealing them 20 − 220 (based on level)"
       }
     },
     {
-      "imie": "Vex",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Vex",
+      "level": 1,
+      "statistics": {
         "hp": 590,
         "mana": 490,
-        "obrazeniaOdAtaku": 54,
-        "mocUmiejetnosci": 0,
-        "pancerz": 23,
-        "odpornoscNaMagie": 28,
-        "predkoscAtaku": 0.669,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 335
+        "physicalDamage": 54,
+        "abilityPower": 0,
+        "armor": 23,
+        "magicResistance": 28,
+        "attackSpeed": 0.669,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 335
       },
-      "skalowanie": {
-        "skalowanieHP" : 104,
-        "skalowanieMany" : 32,
-        "skalowanieAD": 2.75,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 104,
+        "manaScaling": 32,
+        "adScaling": 2.75,
+        "armorScaling": 4.7,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Porywisty Pocisk",
-        "opis": "Vex wypuszcza do przodu falę, która zadaje magiczne obrażenia wrogom, przez których przeleci. Po chwili fala przyspiesza, ale zmniejsza się jej szerokość. Porywisty Pocisk wysadza Mrok na wszystkich oznaczonych wrogach, których trafi.",
-        "skalowanieMocyUmiejetnosci": 0.7,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Mistral Bolt",
+        "description": "Vex launches a wave of mist in the target direction that deals magic damage to enemies hit. After travelling 500 units, the wave accelerates but also narrows itself.",
+        "apScaling": 0.7,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 105,
           "lvl3": 150,
           "lvl4": 195,
           "lvl5": 240
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Przestrzeń Osobista",
-        "opis":  "Vex zyskuje tarczę i emituje falę uderzeniową, zadając obrażenia magiczne wrogom wokół niej. Przestrzeń Osobista wysadza Mrok na wszystkich oznaczonych wrogach, których trafi",
-        "skalowanieMocyUmiejetnosci": 0.30,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Personal Space",
+        "description":  "Vex emits a shockwave around her before the cast time, dealing magic damage to nearby enemies and granting herself a Hybrid resistances shield for 2.5 seconds.",
+        "apScaling": 0.30,
+        "baseDamage": {
           "lvl1": 80,
           "lvl2": 120,
           "lvl3": 160,
@@ -124,11 +124,11 @@
           "lvl5": 240
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Otulająca Ciemność",
-        "opis": "Cień leci w wybrane miejsce, zwiększając swój rozmiar podczas lotu. Po dotarciu do celu Cień zadaje obrażenia magiczne, spowalnia i oznacza trafionych wrogów Mrokiem.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Looming Darkness",
+        "description": "Vex tosses her Shadow to explode at the target location, dealing magic damage to enemies hit and slowing them for 2 seconds. The explosion's radius increases based on cast distance.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 50,
           "lvl2": 70,
           "lvl3": 90,
@@ -136,59 +136,59 @@
           "lvl5": 130
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Wzbierający Cień",
-        "opis": "Cień leci do przodu, oznaczając i zadając obrażenia magiczne pierwszemu trafionemu wrogiemu bohaterowi. Następnie Vex może ponownie użyć tej umiejętności, aby Cień przyciągnął ją do oznaczonego celu, co zada mu dodatkowe obrażenia magiczne.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Shadow Surge",
+        "description": "Vex sends her Shadow in the target direction that grants sight around its trajectory and deals magic damage to enemies hit.",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 225,
           "lvl2": 375,
           "lvl3": 525
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Zagłada i Mrok",
-        "opis": "Vex co jakiś czas zostaje wzmocniona przez Zagładę, przez co jej następna podstawowa umiejętność przerywa doskoki wrogów i przestrasza ich."
+      "passiveAbility": {
+        "name": "Doom 'n Gloom",
+        "description": "Periodically, Vex empowers her next basic ability to knock down and Flee icon.png fear enemies hit for 0.75 / 1 / 1.25 / 1.5 (based on level) seconds, during which they are slowed by 60% − 99% (based on distance from Vex). \nIf Looming Darkness triggers Doom, enemies hit will flee from the epicenter instead. Doom's cooldown resets upon respawning."
       }},
     {
-      "imie": "Xerath",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Xerath",
+      "level": 1,
+      "statistics": {
         "hp": 596,
         "mana": 459,
-        "obrazeniaOdAtaku": 55,
-        "mocUmiejetnosci": 0,
-        "pancerz": 22,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.625,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 340
+        "physicalDamage": 55,
+        "abilityPower": 0,
+        "armor": 22,
+        "magicResistance": 30,
+        "attackSpeed": 0.625,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 340
       },
-      "skalowanie": {
-        "skalowanieHP" : 106,
-        "skalowanieMany" : 22,
-        "skalowanieAD": 3,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 106,
+        "manaScaling": 22,
+        "adScaling": 3,
+        "armorScaling": 4.7,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
-      "umiejetnoscPierwsza": {
-        "nazwa": "Arkanopuls",
-        "opis": "Xerath po krótkiej chwili wystrzeliwuje promień magicznej energii w linii prostej, który zadaje obrażenia magiczne wszystkim trafionym wrogom.",
-        "skalowanieMocyUmiejetnosci": 0.85,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Arcanopulse",
+        "description": "Charges while being slowed by 0% − 40% (based on channel time) for up to 3 seconds to increase Arcanopulse's range over the first 1.5 to 1.75 seconds of the channel.",
+        "apScaling": 0.85,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 110,
           "lvl3": 150,
           "lvl4": 190,
           "lvl5": 230
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Oko Zniszczenia",
-        "opis":  "Xerath przywołuje tajemniczą energię w wybranym miejscu, która po 0,5 sekundowym opóźnieniu wybucha i zadaje obrażenia magiczne wszystkim wrogom w obszarze oraz spowalnia ich o 25% na 2,5 sekundy.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Eye of Destruction",
+        "description":  "casts down a blast of arcane energy that strikes the target location after 0.528 seconds, \nbriefly granting sight of the area and dealing magic damage to enemies hit and slowing them by 25% for 2.5 seconds.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 95,
           "lvl3": 130,
@@ -196,11 +196,11 @@
           "lvl5": 200
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Porażająca Kula",
-        "opis": "Xerath wystrzeliwuje kulę energii w linii prostej, która zadaje obrażenia magiczne pierwszej trafionej jednostce i ogłusza ją na 0,5 - 2 sekundy.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Shocking Orb",
+        "description": "Fires an orb of energy in the target direction that deals magic damage to the first enemy hit and stuns them for 0.75 − 2.25 (based on orb travel distance) seconds.",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 80,
           "lvl2": 110,
           "lvl3": 140,
@@ -208,59 +208,59 @@
           "lvl5": 200
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Tajemny Rytuał",
-        "opis": "Xerath unieruchamia siebie na maksymalnie 10 sekund i staje się odporny na efekty w powietrzu. Dodatkowo w czasie jego trwania zyskuje możliwość wielokrotnej aktywacji Ezoterycznego Ostrzału, lecz traci możliwość rzucania innych umiejętności.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Rite of the Arcane",
+        "description": "Channels for up to 10 seconds, gaining the ability to recast Rite of the Arcane multiple times after 0.5 seconds within the duration. \nIf Rite of the Arcane ends without any of the recasts being used, half of its cooldown is refunded.",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 600,
           "lvl2": 1000,
           "lvl3": 1500
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Przypływ Many",
-        "opis": "Następny atak podstawowy Xeratha skierowany przeciwko wrogiej jednostce, przywróci mu przy trafieniu X pkt. many. Efekt podwojony w przypadku wrogich bohaterów."
+      "passiveAbility": {
+        "name": "Mana Surge",
+        "description": "Xerath empowers his next basic attack to restore 30 − 195 (based on level) mana, doubled to 60 − 390 (based on level) against enemy champions."
       }},
     {
-      "imie": "Evelynn",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Evelynn",
+      "level": 1,
+      "statistics": {
         "hp": 642,
         "mana": 315,
-        "obrazeniaOdAtaku": 61,
-        "mocUmiejetnosci": 0,
-        "pancerz": 37,
-        "odpornoscNaMagie": 32,
-        "predkoscAtaku": 0.667,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 335
+        "physicalDamage": 61,
+        "abilityPower": 0,
+        "armor": 37,
+        "magicResistance": 32,
+        "attackSpeed": 0.667,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 335
       },
-      "skalowanie": {
-        "skalowanieHP" : 98,
-        "skalowanieMany" : 42,
-        "skalowanieAD": 3,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 2.05,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 98,
+        "manaScaling": 42,
+        "adScaling": 3,
+        "armorScaling": 4.7,
+        "mrScaling": 2.05,
+        "asScaling": 0.0095
       },
-      "umiejetnoscPierwsza": {
-        "nazwa": "Kolec Nienawiści",
-        "opis": "Wicie Evelynn uderzają w wybranym kierunku, zadając Ability power icon.png obrażenia magiczne pierwszej trafionej jednostce i sprawiają, że 3 następne zaklęcia lub ataki Evelynn przeciwko tej jednostce zadadzą dodatkowe obrażenia magicznych.",
-        "skalowanieMocyUmiejetnosci": 0.3,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Hate Spike",
+        "description": "Launches a dart in the target direction, dealing magic damage to the first enemy hit and marking them for 4 seconds.",
+        "apScaling": 0.3,
+        "baseDamage": {
           "lvl1": 65,
           "lvl2": 85,
           "lvl3": 105,
           "lvl4": 125,
           "lvl5": 145
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Pokuszenie",
-        "opis":  "Evelynn przeklina wybranego bohatera lub potwora na 5 sekund. Jeżeli Evelynn trafi cel za pomocą podstawowego ataku lub umiejętności, zużyje klątwę, odzyska jej koszt many i na krótko spowolni cel o 65%. Jeżeli klątwa utrzyma się przez co najmniej 2,5 sek., zużycie jej spowoduje zauroczenie celu",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Allure",
+        "description":  "Curses the target enemy champion or monster for 5 seconds.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 250,
           "lvl2": 300,
           "lvl3": 350,
@@ -268,11 +268,11 @@
           "lvl5": 450
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Smagnięcie",
-        "opis": "Evelynn przyciąga się do celu, zadając mu i wrogom znajdującym się na drodze obrażenia magiczne",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Whiplash",
+        "description": "Whips the target enemy with her lashers, dealing magic damage and applying on-hit effects at 100% effectiveness.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 75,
           "lvl2": 100,
           "lvl3": 125,
@@ -280,59 +280,59 @@
           "lvl5": 175
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Ostatnia Pieszczota",
-        "opis": "Evelynn wyzwala swoją demoniczną energię, stając się niemożliwą do obrania za cel i dziesiątkując wrogów przed sobą zadając Ability power icon.png obrażenia magiczne, zwiększone w przypadku wrogów mających mniej niż 30% maksymalnego zdrowia, po czym się wycofuje.",
-        "skalowanieMocyUmiejetnosci": 1.8,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Last Caress",
+        "description": "Reveals her true form, becoming untargetable at the start of the cast time and then unleashing her lashers in a cone in the target direction, dealing magic damage to enemies struck within.",
+        "apScaling": 1.8,
+        "baseDamage": {
           "lvl1": 300,
           "lvl2": 600,
           "lvl3": 900
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Demoniczny Cień",
-        "opis": "Bierna: Evelynn zostaje otoczona demonicznym cieniem po spędzeniu 1,5 sek. poza walką\nDemoniczny Cień: Gdy pasek zdrowia Evelynn spadnie poniżej 250 - 590 (+ 250% mocy umiejętności) pkt. zdrowia, Evelynn zacznie się Health icon.png leczyć, przywracając sobie 15 - 75 punktów zdrowia na sekundę. Od 6 poziomu Demoniczny Cień zapewnia również kamuflaż."
+      "passiveAbility": {
+        "name": "Demon Shade",
+        "description": "Shrouds herself in Demon Shade after not performing actions that break stealth for 4 seconds."
       }},
     {
-      "imie": "Lissandra",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Lissandra",
+      "level": 1,
+      "statistics": {
         "hp": 620,
         "mana": 475,
-        "obrazeniaOdAtaku": 55,
-        "mocUmiejetnosci": 0,
-        "pancerz": 22,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.656,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 325
+        "physicalDamage": 55,
+        "abilityPower": 0,
+        "armor": 22,
+        "magicResistance": 30,
+        "attackSpeed": 0.656,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 325
       },
-      "skalowanie": {
-        "skalowanieHP" : 110,
-        "skalowanieMany" : 30,
-        "skalowanieAD": 2.7,
-        "skalowaniePancerz": 4.9,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 110,
+        "manaScaling": 30,
+        "adScaling": 2.7,
+        "armorScaling": 4.9,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
-      "umiejetnoscPierwsza": {
-        "nazwa": "Odłamek Lodu",
-        "opis": "Lissandra ciska lodową włócznią, która porusza się w linii prostej i rozbija się, gdy trafi wroga, zadając obrażenia magiczne i spowalniając go na 1.5 sekundy. Odłamki następnie przechodzą przez cel i zadają obrażenia trafionym wrogom (nie spowalnia ich).",
-        "skalowanieMocyUmiejetnosci": 0.8,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Ice Shard",
+        "description": " launches a shard of ice in the target direction that deals magic damage to enemies hit. The first target hit is slowed for 1.5 seconds",
+        "apScaling": 0.8,
+        "baseDamage": {
           "lvl1": 80,
           "lvl2": 110,
           "lvl3": 140,
           "lvl4": 170,
           "lvl5": 200
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Pierścień Mrozu",
-        "opis":  "Lissandra zamraża obszar dookoła, zadając obrażenia magiczne wrogom i unieruchamiając ich na krótki czas.",
-        "skalowanieMocyUmiejetnosci": 0.7,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Ring of Frost",
+        "description":  "Lissandra freezes nearby enemies, dealing magic damage and rooting them for a duration.",
+        "apScaling": 0.7,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 105,
           "lvl3": 140,
@@ -340,11 +340,11 @@
           "lvl5": 210
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Ścieżka Lodowca",
-        "opis": "Lissandra ciska powolnym, długodystansowym lodowym pazurem na 1.5 sekundy, zadającym obrażenia magiczne wrogom na swojej drodze. Ponowne użycie Ścieżki Lodowca teleportuje Lissandrę do aktualnego położenia pazura.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Glacial Path",
+        "description": "Lissandra sends a claw of ice in the target direction that deals magic damage to enemies it passes through, \ndecelerating over 1.25 seconds. Glacial Path can be recast after 0.5 seconds while the claw is active.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 105,
           "lvl3": 140,
@@ -352,59 +352,59 @@
           "lvl5": 210
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Lodowy Grobowiec",
-        "opis": "Lissandra zamraża wrogiego bohatera, zadając mu obrażenia magiczne i ogłuszając go na 1.5 sekundy.",
-        "skalowanieMocyUmiejetnosci": 0.75,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Frozen Tomb",
+        "description": "Lissandra freezes the target enemy champion, knocking them down and stunning them for 1.5 seconds.",
+        "apScaling": 0.75,
+        "baseDamage": {
           "lvl1": 150,
           "lvl2": 250,
           "lvl3": 350
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Zrodzona z Lodu Niewola",
-        "opis": "Jeśli w pobliżu Lissandry zginie wrogi bohater - moc Lissandry przekształca jego zwłoki w Zamarzniętego Niewolnika, który istnieje i podąża za wrogimi celami przez 4 sekundy, spowalniając w swoim obszarze przeciwników o 25%. Po 4 sekundach Niewolnik roztrzaskuje się zadając 120 − 520 (wzrasta co poziom) (+ 50% AP)."
+      "passiveAbility": {
+        "name": "Iceborn Subjugation",
+        "description": "Whenever a nearby enemy champion dies, Lissandra spawns a Frozen Thrall from their corpse."
       }},
     {
-      "imie": "Annie",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Annie",
+      "level": 1,
+      "statistics": {
         "hp": 560,
         "mana": 418,
-        "obrazeniaOdAtaku": 50,
-        "mocUmiejetnosci": 0,
-        "pancerz": 19,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.579,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 335
+        "physicalDamage": 50,
+        "abilityPower": 0,
+        "armor": 19,
+        "magicResistance": 30,
+        "attackSpeed": 0.579,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 335
       },
-      "skalowanie": {
-        "skalowanieHP" : 102,
-        "skalowanieMany" : 25,
-        "skalowanieAD": 2.65,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 102,
+        "manaScaling": 25,
+        "adScaling": 2.65,
+        "armorScaling": 4.7,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
-      "umiejetnoscPierwsza": {
-        "nazwa": "Dezintegracja",
-        "opis": "Annie rzuca wzmocnioną kulą ognia w wybrany wrogi cel i zadaje mu obrażenia magiczne.",
-        "skalowanieMocyUmiejetnosci": 0.8,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Disintegrate",
+        "description": "Annie hurls a fireball at the target enemy that deals magic damage.",
+        "apScaling": 0.8,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 115,
           "lvl3": 150,
           "lvl4": 185,
           "lvl5": 220
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Spopielenie",
-        "opis":  "Annie tworzy stożek płomieni, który zadaje obrażenia magiczne wszystkim wrogom w obszarze",
-        "skalowanieMocyUmiejetnosci": 0.85,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Incinerate",
+        "description":  "Annie releases fire in a cone in the target direction, dealing magic damage to enemies hit.",
+        "apScaling": 0.85,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 115,
           "lvl3": 160,
@@ -412,11 +412,11 @@
           "lvl5": 250
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Płonąca Tarcza",
-        "opis": "Przyznaje Annie i Tibbersowi procentowo zwiększoną odporność na obrażenia oraz zadaje obrażenia wrogom, którzy trafią ją podstawowymi atakami.",
-        "skalowanieMocyUmiejetnosci": 0.4,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Molten Shield",
+        "description": " Annie grants herself or the target allied champion and Tibbers a shield for 3 seconds and 20% − 50% (based on level) bonus movement speed that decays over 1.5 seconds.",
+        "apScaling": 0.4,
+        "baseDamage": {
           "lvl1": 25,
           "lvl2": 35,
           "lvl3": 45,
@@ -424,61 +424,61 @@
           "lvl5": 65
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Przywołanie: Tibbers",
-        "opis": "Annie przywołuje do życia swojego pluszowego misia Tibbersa w wybranym miejscu na 45 sekund i zadaje obrażenia magiczne wszystkim wrogom w obszarze.",
-        "skalowanieMocyUmiejetnosci": 0.75,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Summon: Tibbers",
+        "description": "Annie summons Tibbers to the target location in a burst of flame, dealing magic damage to enemies near him. Summon: Tibbers can be recast at any time while Tibbers is alive.",
+        "apScaling": 0.75,
+        "baseDamage": {
           "lvl1": 150,
           "lvl2": 275,
           "lvl3": 400
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Piromania",
-        "opis": "Po rzuceniu 4 zaklęć, następna zadająca obrażenia umiejętność Annie dodatkowo ogłuszy trafione cele na 1,25 / 1,5 / 1,75 sekundy."
+      "passiveAbility": {
+        "name": "Pyromania",
+        "description": "Annie generates a stack of Pyromania whenever she hits an enemy with Disintegrate Disintegrate or casts her other abilities, stacking up to 4 times, at which she gains Energized."
       }},
     {
-      "imie": "Ryze",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Ryze",
+      "level": 1,
+      "statistics": {
         "hp": 645,
         "mana": 300,
-        "obrazeniaOdAtaku": 58,
-        "mocUmiejetnosci": 0,
-        "pancerz": 22,
-        "odpornoscNaMagie": 32,
-        "predkoscAtaku": 0.625,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 340
+        "physicalDamage": 58,
+        "abilityPower": 0,
+        "armor": 22,
+        "magicResistance": 32,
+        "attackSpeed": 0.625,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 340
       },
-      "skalowanie": {
-        "skalowanieHP" : 124,
-        "skalowanieMany" : 70,
-        "skalowanieAD": 3,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 124,
+        "manaScaling": 70,
+        "adScaling": 3,
+        "armorScaling": 4.7,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Przeciążenie",
-        "opis": "Wywołuje runiczny wybuch, który zadaje obrażenia magiczne pierwszemu trafionemu wrogowi. Wszystkie aktywne Runy ulegają rozładowaniu.",
-        "skalowanieMocyUmiejetnosci": 1.55,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Overload",
+        "description": "Ryze's other basic ability casts reset Overload's cooldown and charge a Rune stack for 4 seconds, refreshing on subsequent casts and stacking up to 2 times.",
+        "apScaling": 1.55,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 90,
           "lvl3": 110,
           "lvl4": 130,
           "lvl5": 150
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Runiczne Więzienie",
-        "opis":  "Natychmiastowo unieruchamia wroga na 0,75 sek. i zadaje mu obrażenia magiczne.",
-        "skalowanieMocyUmiejetnosci": 0.70,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Rune Prison",
+        "description":  "Ryze seizes the target enemy, dealing magic damage and slowing them by 35% for 1.5 seconds.",
+        "apScaling": 0.70,
+        "baseDamage": {
           "lvl1": 80,
           "lvl2": 110,
           "lvl3": 140,
@@ -486,11 +486,11 @@
           "lvl5": 200
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Fluktuacja Magii",
-        "opis": "Nakłada na wroga Fluktuację, która zadaje obrażenia magiczne. Zaklęcia, które zabiją wrogów dotkniętych Fluktuacją, rozprzestrzeniają ją na pobliskich przeciwników.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Spell Flux",
+        "description": "Ryze projects an orb upon the target enemy that deals magic damage.",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 90,
           "lvl3": 120,
@@ -498,61 +498,61 @@
           "lvl5": 180
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Zagięcie Czasoprzestrzeni",
-        "opis": "Ryze otwiera portal. Po 2 sek. wszyscy sojusznicy w pobliżu portalu zostają przeniesieni do miejsca docelowego.",
-        "skalowanieMocyUmiejetnosci": 0.45,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Realm Warp",
+        "description": "Channels for 2 seconds to open a portal beneath him, marking the target location as its destination and gaining sight of the area. \nRyze is able to act while channeling, but the portal will cancel if he is interrupted",
+        "apScaling": 0.45,
+        "baseDamage": {
           "lvl1": 0,
           "lvl2": 0,
           "lvl3": 0
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Mistrzostwo Magii",
-        "opis": "Zaklęcia Ryze'a zadają dodatkowe obrażenia zależne od jego dodatkowej many, a jego maksymalna mana zostaje zwiększona o 5% za każde 100 pkt. mocy umiejętności."
+      "passiveAbility": {
+        "name": "Arcane Mastery",
+        "description": "Ryze increases his maximum mana by (6% per 100 AP)."
       }},
     {
-      "imie": "Ahri",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Ahri",
+      "level": 1,
+      "statistics": {
         "hp": 590,
         "mana": 418,
-        "obrazeniaOdAtaku": 53,
-        "mocUmiejetnosci": 0,
-        "pancerz": 21,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.66,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 330
+        "physicalDamage": 53,
+        "abilityPower": 0,
+        "armor": 21,
+        "magicResistance": 30,
+        "attackSpeed": 0.66,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 330
       },
-      "skalowanie": {
-        "skalowanieHP" : 96,
-        "skalowanieMany" : 25,
-        "skalowanieAD": 3,
-        "skalowaniePancerz": 4.7,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 96,
+        "manaScaling": 25,
+        "adScaling": 3,
+        "armorScaling": 4.7,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Zwodnicza Kula",
-        "opis": "Ahri wypuszcza swoją kulę, która zadaje obrażenia magiczne w drodze do celu, a następnie wraca zadając nieuchronne obrażenia.",
-        "skalowanieMocyUmiejetnosci": 0.35,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Orb of Deception",
+        "description": " sends her orb in the target direction that deals magic damage to enemies hit. At maximum range, the orb homes back to her to deal the same in Hybrid penetration to enemies hit.",
+        "apScaling": 0.35,
+        "baseDamage": {
           "lvl1": 40,
           "lvl2": 65,
           "lvl3": 90,
           "lvl4": 115,
           "lvl5": 140
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Ogniki",
-        "opis":  "Ahri wypuszcza trzy ogniki, które orbitują wokół niej do 5 sekund. Po chwili kierują się na pobliskich widocznych wrogów (w pierwszej kolejności bohaterów, a drugiej ostatni cel ataku podstawowego), zadając obrażenia magiczne.",
-        "skalowanieMocyUmiejetnosci": 0.30,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Fox-Fire",
+        "description":  "Ahri gains 40% bonus movement speed that decays over 2 seconds and conjures three flames which orbit her clockwise for up to 2.5 seconds",
+        "apScaling": 0.30,
+        "baseDamage": {
           "lvl1": 40,
           "lvl2": 65,
           "lvl3": 90,
@@ -560,11 +560,11 @@
           "lvl5": 140
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Urok",
-        "opis": "Ahri posyła buziaka, który zadaje obrażenia magiczne i rzuca urok na pierwszego wroga, którego napotka na swojej drodze, dzięki czemu podchodzi on do niej całkiem bezbronny oraz spowolniony o 50%.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Charm",
+        "description": "Ahri blows forth a kiss in the target direction that deals magic damage to the first enemy hit, knocking them down and charming and slowing them by 65% for a duration.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 95,
           "lvl3": 130,
@@ -572,61 +572,61 @@
           "lvl5": 200
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Widmowa Szarża",
-        "opis": "Ahri skacze do przodu i wystrzeliwuje pociski esencji w stronę 3 pobliskich wrogów (w pierwszej kolejności bohaterów), zadając obrażenia magiczne.",
-        "skalowanieMocyUmiejetnosci": 0.25,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Widmowa Szarża",
+        "description": "Ahri dashes to the target location and then fires essence bolts to up to 3 nearby visible enemies, each dealing magic damage.",
+        "apScaling": 0.25,
+        "baseDamage": {
           "lvl1": 210,
           "lvl2": 330,
           "lvl3": 450
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Kradzież Esencji",
-        "opis": "Ahri otrzymuje ładunek Kradzieży Esencji, kiedy trafi wroga zaklęciem (maksymalnie 3 ładunki na umiejętność). Po osiągnięciu 9 ładunków następna umiejętność Ahri uleczy ją o 3 / 5 / 9 / 18 (+9% mocy umiejętności) punkty zdrowia za każdego trafionego wroga."
+      "passiveAbility": {
+        "name": "Essence Theft",
+        "description": "Ahri generates a stack of Essence Fragment whenever she kills a minion or monster. At 9 stacks, she consumes them to heal herself for 35 − 95 (based on level) (+ 20% AP)."
       }},
     {
-      "imie": "Veigar",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Veigar",
+      "level": 1,
+      "statistics": {
         "hp": 575,
         "mana": 490,
-        "obrazeniaOdAtaku": 52,
-        "mocUmiejetnosci": 0,
-        "pancerz": 21,
-        "odpornoscNaMagie": 32,
-        "predkoscAtaku": 0.625,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 340
+        "physicalDamage": 52,
+        "abilityPower": 0,
+        "armor": 21,
+        "magicResistance": 32,
+        "attackSpeed": 0.625,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 340
       },
-      "skalowanie": {
-        "skalowanieHP" : 108,
-        "skalowanieMany" : 26,
-        "skalowanieAD": 2.7,
-        "skalowaniePancerz": 5.2,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 108,
+        "manaScaling": 26,
+        "adScaling": 2.7,
+        "armorScaling": 5.2,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Złowrogie Uderzenie",
-        "opis": "Veigar atakuje pociskiem mrocznej energii, który zadaje określoną wartość pkt. obrażeń magicznych pierwszym dwóm trafionym przeciwnikom.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Baleful Strike",
+        "description": "Veigar blasts a dark bolt in the target direction that deals magic damage to the first two enemies hit.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 80,
           "lvl2": 120,
           "lvl3": 160,
           "lvl4": 200,
           "lvl5": 240
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Ciemna Materia",
-        "opis":  "Po 1,2 sek. w wybrane miejsce z niebios spada czarna materia, zadając określoną wartość pkt. obrażeń magicznych.",
-        "skalowanieMocyUmiejetnosci": 1,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Dark Matter",
+        "description":  "casts down a mass of dark matter that strikes the target location after a 1.221 seconds delay, dealing magic damage to enemies hit.",
+        "apScaling": 1,
+        "baseDamage": {
           "lvl1": 100,
           "lvl2": 150,
           "lvl3": 200,
@@ -634,11 +634,11 @@
           "lvl5": 300
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Horyzont Zdarzeń",
-        "opis": "Po 0,5 sek. opóźnienia Veigar zagina krawędzie przestrzeni wokół wybranego miejsca na 3 sekundy, tworząc pentagon ścian. Przeciwnicy, którzy spróbują przez nie przejść, zostaną zatrzymani i ogłuszeni na pewien czas.",
-        "skalowanieMocyUmiejetnosci": 0.3,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Event Horizon",
+        "description": "Veigar forms a cage at the target location that erects after a 0.5 second delay, remaining there for 3 seconds. \nEnemies that collide with the edges of the cage are knocked down and stunned for a duration.",
+        "apScaling": 0.3,
+        "baseDamage": {
           "lvl1": 0,
           "lvl2": 0,
           "lvl3": 0,
@@ -646,61 +646,61 @@
           "lvl5": 0
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Przedwieczny Wybuch",
-        "opis": "Uderza we wrogiego bohatera pierwotną magią, zadając określoną wartość pkt. obrażeń magicznych, w zależności od brakującego zdrowia celu.",
-        "skalowanieMocyUmiejetnosci": 0.75,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Primordial Burst",
+        "description": "Veigar sends a primordial burst at the target enemy champion that deals magic damage, increased by 0% − 100% (based on target's missing health).",
+        "apScaling": 0.75,
+        "baseDamage": {
           "lvl1": 350,
           "lvl2": 500,
           "lvl3": 650
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Niezwykle Nikczemna Moc",
-        "opis": "Veigar jest największym złem, jakie kiedykolwiek uderzyło w serce Runeterry — i staje się coraz potężniejszy! Trafienie wrogiego bohatera zaklęciem daje Veigarowi ładunek Niezwykłej Nikczemności, w związku z czym zyskuje 1 pkt. mocy umiejętności. Udział w zabójstwach zapewnia 5 dodatkowych ładunków."
+      "passiveAbility": {
+        "name": "Phenomenal Evil Power",
+        "description": "Veigar generates a stack of Phenomenal Evil for each enemy champion hit by his abilities, and 5 stacks whenever he scores an enemy champion takedown."
       }},
     {
-      "imie": "Orianna",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Orianna",
+      "level": 1,
+      "statistics": {
         "hp": 600,
         "mana": 418,
-        "obrazeniaOdAtaku": 50,
-        "mocUmiejetnosci": 0,
-        "pancerz": 20,
-        "odpornoscNaMagie": 26,
-        "predkoscAtaku": 0.658,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 325
+        "physicalDamage": 50,
+        "abilityPower": 0,
+        "armor": 20,
+        "magicResistance": 26,
+        "attackSpeed": 0.658,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 325
       },
-      "skalowanie": {
-        "skalowanieHP" : 105,
-        "skalowanieMany" : 25,
-        "skalowanieAD": 2.6,
-        "skalowaniePancerz": 4.2,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 105,
+        "manaScaling": 25,
+        "adScaling": 2.6,
+        "armorScaling": 4.2,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Rozkaz: Atak",
-        "opis": "Orianna rozkazuje Kuli, by wystrzeliła w dane miejsce, zadając określoną wartość pkt. obrażeń magicznych celom po drodze. Zadaje jednak o 10% mniej obrażeń każdej kolejnej trafionej jednostce (minimalnie 40%).",
-        "skalowanieMocyUmiejetnosci": 0.5,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Command: Attack",
+        "description": "Orianna commands The Ball to fly to the target location and remain there, \ndealing magic damage to enemies it passes through and nearby enemies upon arrival, reduced to 70% against those hit beyond the first.",
+        "apScaling": 0.5,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 90,
           "lvl3": 120,
           "lvl4": 150,
           "lvl5": 180
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Rozkaz: Dysonans",
-        "opis":  "Orianna rozkazuje Kuli wytworzyć impuls elektryczny, zadający określoną wartość pkt. obrażeń magicznych pobliskim wrogom.",
-        "skalowanieMocyUmiejetnosci": 0.7,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Command: Dissonance",
+        "description":  "Orianna commands The Ball to emit an electric pulse that deals magic damage to nearby enemies.",
+        "apScaling": 0.7,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 105,
           "lvl3": 150,
@@ -708,11 +708,11 @@
           "lvl5": 240
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Rozkaz: Chroń",
-        "opis": "Orianna rozkazuje Kuli przyczepić się do sojuszniczego bohatera, by osłaniać go przez 2,5 sek. przed określoną wartością pkt. obrażeń. Wrogowie, przez których przeniknie kula, otrzymują obrażenia równe pewną wartość pkt. obrażeń magicznych.",
-        "skalowanieMocyUmiejetnosci": 0.3,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Command: Protect",
+        "description": "Orianna commands The Ball to fly to herself or the target allied champion and attach itself to the target, \ndealing magic damage to enemies it passes through and granting the target a shield for 2.5 seconds upon arrival.",
+        "apScaling": 0.3,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 90,
           "lvl3": 120,
@@ -720,61 +720,61 @@
           "lvl5": 180
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Rozkaz: Fala Uderzeniowa",
-        "opis": "Orianna rozkazuje Kuli, by po chwili wypuściła falę uderzeniową, zadając określoną wartość pkt. obrażeń magicznych pobliskim wrogom i wyrzucając ich w powietrze w kierunku Kuli.",
-        "skalowanieMocyUmiejetnosci": 0.9,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Command: Shockwave",
+        "description": "commands The Ball to unleash a shockwave that deals magic damage to nearby enemies, stunning them for 0.75 seconds, and pulling them over 325 − 700 (based on proximity to ball) units, though not through terrain.",
+        "apScaling": 0.9,
+        "baseDamage": {
           "lvl1": 250,
           "lvl2": 350,
           "lvl3": 450
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Nakręcanie",
-        "opis": "Orianna używa swej Kuli jako punktu centralnego zaklęć. Kula automatyczny wraca do bohaterki, jeśli jest od niej zbyt daleko."
+      "passiveAbility": {
+        "name": "Clockwork Windup",
+        "description": " Orianna is accompanied by The Ball, which she commands with her abilities. \nThe Ball incurs a 0.15-second global cooldown on all of her abilities between casts. Additionally, The Ball attaches to Orianna if she is near it, \nand snaps back to her if she moves too far away from it, which incurs a 0.5-second global cooldown on all of her abilities."
       }},
     {
-      "imie": "Kassadin",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Kassadin",
+      "level": 1,
+      "statistics": {
         "hp": 646,
         "mana": 400,
-        "obrazeniaOdAtaku": 59,
-        "mocUmiejetnosci": 0,
-        "pancerz": 19,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.64,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 335
+        "physicalDamage": 59,
+        "abilityPower": 0,
+        "armor": 19,
+        "magicResistance": 30,
+        "attackSpeed": 0.64,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 335
       },
-      "skalowanie": {
-        "skalowanieHP" : 119,
-        "skalowanieMany" : 87,
-        "skalowanieAD": 3.9,
-        "skalowaniePancerz": 4,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 119,
+        "manaScaling": 87,
+        "adScaling": 3.9,
+        "armorScaling": 4,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Sfera Nicości",
-        "opis": "Aktywna: Kassadin ciska nieziemskim pociskiem z energii Pustki, zadając obrażenia i przerywając ładowanie się zaklęć.",
-        "skalowanieMocyUmiejetnosci": 0.7,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Null Sphere  ",
+        "description": "fires an orb of void energy at the target enemy that deals magic damage and disrupts their ongoing channels.",
+        "apScaling": 0.7,
+        "baseDamage": {
           "lvl1": 65,
           "lvl2": 95,
           "lvl3": 125,
           "lvl4": 155,
           "lvl5": 185
         }},
-      "umiejetnoscDruga": {
-        "nazwa": "Piekielne Ostrze",
-        "opis":  "Kassadin ładuje swoje Piekielne Ostrze, powodując, że jego następny podstawowy atak posiada zwiekszony zasięg o 50 jednostek i zadaje dodatkowo obrażenia magiczne oraz przywraca mu % brakującej many.",
-        "skalowanieMocyUmiejetnosci": 0.8,
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Nether Blade",
+        "description": "Kassadin empowers his next basic attack within 5 seconds to have an uncancellable windup, gain 50 bonus range, \ndeal increased bonus magic damage, and restore mana, with the restoration amount quintupled against champions.",
+        "apScaling": 0.8,
+        "baseDamage": {
           "lvl1": 50,
           "lvl2": 75,
           "lvl3": 110,
@@ -782,11 +782,11 @@
           "lvl5": 150
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Puls Mocy",
-        "opis": "Kassadin wystrzeliwuję stożkowy impuls pozaziemskiej energii z Pustki, zadając obrażenia magiczne i spowalniając na 1 sekundę cele w obszarze.",
-        "skalowanieMocyUmiejetnosci": 0.85,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Force Pulse",
+        "description": "Kassadin emits a pulse of void energy in a cone in the target direction that deals magic damage to enemies hit and slows them for 1 second.",
+        "apScaling": 0.85,
+        "baseDamage": {
           "lvl1": 60,
           "lvl2": 90,
           "lvl3": 120,
@@ -794,50 +794,50 @@
           "lvl5": 180
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Krok przez Wymiary",
-        "opis": "Kassadin teleportuje się w wybrane miejsce w okolicy, zadając obrażenia otaczającym go wrogom.",
-        "skalowanieMocyUmiejetnosci": 0.4,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Riftwalk",
+        "description": "Kassadin blinks toward the target location, dealing magic damage to all nearby enemies upon arrival. \nHe then gains a stack of Riftwalk for 5 seconds, refreshing on subsequent casts and stacking up to 4 times.",
+        "apScaling": 0.4,
+        "baseDamage": {
           "lvl1": 70,
           "lvl2": 90,
           "lvl3": 110
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "Kamień Pustki",
-        "opis": "Kassadin redukuje otrzymane obrażenia magiczne o 15% i zyskuje możliwość przenikania przez jednostki."
+      "passiveAbility": {
+        "name": "Void Stone",
+        "description": "Kassadin is permanently ghosted and takes 10% reduced magic damage."
       }},
     {
-      "imie": "Anivia",
-      "poziom": 1,
-      "statystyki": {
+      "name": "Anivia",
+      "level": 1,
+      "statistics": {
         "hp": 550,
         "mana": 495,
-        "obrazeniaOdAtaku": 51,
-        "mocUmiejetnosci": 0,
-        "pancerz": 21,
-        "odpornoscNaMagie": 30,
-        "predkoscAtaku": 0.63,
-        "przyspieszenieUmiejetnosci": 0,
-        "szansaNaTrafienieKrytyczne": 0,
-        "predkoscRuchu": 325
+        "physicalDamage": 51,
+        "abilityPower": 0,
+        "armor": 21,
+        "magicResistance": 30,
+        "attackSpeed": 0.63,
+        "cooldownReduction": 0,
+        "critChance": 0,
+        "movementSpeed": 325
       },
-      "skalowanie": {
-        "skalowanieHP" : 92,
-        "skalowanieMany" : 45,
-        "skalowanieAD": 3.2,
-        "skalowaniePancerz": 4.9,
-        "skalowanieMR": 1.3,
-        "skalowanieAS": 0.0095
+      "scaling": {
+        "hpScaling": 92,
+        "manaScaling": 45,
+        "adScaling": 3.2,
+        "armorScaling": 4.9,
+        "mrScaling": 1.3,
+        "asScaling": 0.0095
       },
 
 
-      "umiejetnoscPierwsza": {
-        "nazwa": "Błyskawiczny mróz",
-        "opis": "Anivia macha skrzydłami, przywołując kulę lodu, która leci w kierunku przeciwników, obladzając i zadając obrażenia celom na swej drodze. Kiedy pocisk wybuchnie, zadaje obrażenia obszarowe i ogłusza cele w okolicy.",
-        "skalowanieMocyUmiejetnosci": 0.35,
-        "bazoweObrazenia": {
+      "firstAbility": {
+        "name": "Flash Frost",
+        "description": "Anivia launches a chunk of ice in the target direction that deals magic damage to enemies \nhit and slows them by 20% − 40% (based on Glacial Storm's Rank) for 3 seconds.",
+        "apScaling": 0.35,
+        "baseDamage": {
           "lvl1": 110,
           "lvl2": 165,
           "lvl3": 220,
@@ -845,10 +845,10 @@
           "lvl5": 330
         }
       },
-      "umiejetnoscDruga": {
-        "nazwa": "Krystalizacja",
-        "opis":  "Anivia zamraża wilgoć w powietrzu, tworząc lodową ścianę blokującą ruchy. Ściana utrzymuje się tylko przez chwilę, po czym topnieje.",
-        "bazoweObrazenia": {
+      "secondAbility": {
+        "name": "Crystallize",
+        "description":  "Anivia summons a wall of ice at the target location perpendicular to her facing, \nknocking all units away from it, though not through terrain. The wall lingers as impassable terrain for 5 seconds.",
+        "baseDamage": {
           "lvl1": 0,
           "lvl2": 0,
           "lvl3": 0,
@@ -856,11 +856,11 @@
           "lvl5": 0
         }
       },
-      "umiejetnoscTrzecia": {
-        "nazwa": "Odmrożenie",
-        "opis": "Machnięciem skrzydeł Anivia wysyła w stronę celu lodowaty podmuch wiatru, zadając obrażenia. Jeżeli cel został niedawno trafiony Błyskawicznym Mrozem lub otrzymał obrażenia od w pełni uformowanej Burzy Lodu, otrzyma podwójne obrażenia.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "thirdAbility": {
+        "name": "Frostbite",
+        "description": "Enemies hit by Flash Frost or a fully formed Glacial Storm become Chilled for 3 seconds, refreshing on subsequent hits.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 100,
           "lvl2": 150,
           "lvl3": 200,
@@ -868,210 +868,202 @@
           "lvl5": 300
         }
       },
-      "umiejetnoscCzwarta": {
-        "nazwa": "Burza lodu",
-        "opis": "Anivia przywołuje deszcz lodu i gradu, który zadaje wrogom obrażenia i spowalnia ich.",
-        "skalowanieMocyUmiejetnosci": 0.6,
-        "bazoweObrazenia": {
+      "fourthAbility": {
+        "name": "Glacial Storm",
+        "description": "Anivia calls forth a driving rain of ice and hail at the target location, dealing magic damage every 0.5 seconds \nto enemies within and slowing them for 1 second, refreshing every 0.5 seconds while they remain inside.",
+        "apScaling": 0.6,
+        "baseDamage": {
           "lvl1": 45,
           "lvl2": 68,
           "lvl3": 90
         }
       },
-      "umiejetnoscPasywna": {
-        "nazwa": "ODRODZENIE",
-        "opis": "Po otrzymaniu śmiertelnych obrażeń Anivia przybiera postać jaja i odradza się z pełnią zdrowia."
+      "passiveAbility": {
+        "name": "Rebirth",
+        "description": "Periodically, upon taking fatal damage, Anivia enters resurrection for 6 seconds and restores all of her health."
       }}
   ],
   "itemy": [
     {
-      "nazwa": "hextechowy pas rakietowy",
-      "typ": "Mityczny",
-      "pasywka": "Doskakujesz w wybranym kierunku, wystrzeliwując łuk magicznych pocisków, zadawając obrażenia oraz zapewnia wszystkim legendarnym przedmiotom przebicie odporności na magie",
-      "mocUmiejetnosci": 90,
+      "name": "hextech rocketbelt",
+      "type": "Mythic",
+      "passive": "SUPERSONIC: Dash 125 to 275 units in the target direction, though not through terrain, unleashing an arc of 7 rockets in the same direction that deal 125 (+ 15% AP) magic damage to enemies hit.",
+      "abilityPower": 90,
       "hp": 250,
-      "przyspieszenieUmiejetnosci": 15,
-      "pktPrzebiciaOdpornosciNaMagie": 6
+      "cooldownReduction": 15,
+      "magicResistancePenetration": 6
     },
     {
-      "nazwa": "kryształowy kostur rylai",
-      "typ": "Legendary",
-      "pasywka": "Umiejętności zadające obrażenia spowalniają wrogów",
-      "mocUmiejetnosci": 75,
+      "name": "rylai crystal scepter",
+      "type": "Legendary",
+      "passive": "Dealing ability damage slows affected units by 30% for 1 second.",
+      "abilityPower": 75,
       "hp": 400
     },
     {
-      "nazwa": "korona rozstrzaskanej krolowej",
-      "typ": "Mityczny",
-      "pasywka": "Zapewnia osłone która redukuje obrażenia",
-      "mocUmiejetnosci": 70,
+      "name": "crown of the shattered queen",
+      "type": "Mythic",
+      "passive": " Become Safeguarded to reduce incoming champion damage by 75%, lingering for 1.5 seconds after taking damage from a champion (40 (restarts upon taking damage from champions) second cooldown).",
+      "abilityPower": 70,
       "hp": 250,
       "mana": 600,
-      "przyspieszenieUmiejetnosci": 20
+      "cooldownReduction": 20
     },
     {
-      "nazwa": "wieczna zmarzlina",
-      "typ": "Mityczny",
-      "pasywka": "Zamraza przeciwników po użyciu w stożku",
-      "mocUmiejetnosci": 70,
+      "name": "everfrost",
+      "type": "Mythic",
+      "passive": "Unleash a fan of icy shards in a cone in the target direction, dealing 100 (+ 30% AP) magic damage to enemies struck within and slowing them by 65% for 1 second.",
+      "abilityPower": 70,
       "hp": 250,
       "mana": 600,
-      "przyspieszenieUmiejetnosci": 20
+      "cooldownReduction": 20
     },
     {
-      "nazwa": "kostur archaniola",
-      "typ": "Legendarny",
-      "pasywka": "Zbiera manę, jak uzbiera wystarczająco dużo to przedmiot ewoluuje",
-      "mocUmiejetnosci": 70,
+      "name": "archangel staff",
+      "type": "Legendary",
+      "passive": "Transforms into Seraph's Embrace at 360 bonus mana.",
+      "abilityPower": 70,
       "hp": 200,
       "mana": 500,
-      "przyspieszenieUmiejetnosci": 10
+      "cooldownReduction": 10
     },
     {
-      "nazwa": "klepsydra zhonyi",
-      "typ": "Legendarny",
-      "pasywka": "Zyskujesz niewrażliwość na 2.5sekundy, lecz nie możesz wykonywać żadnych akcji",
-      "mocUmiejetnosci": 80,
-      "pancerz": 45,
-      "przyspieszenieUmiejetnosci": 15
+      "name": "zhonya hourglass",
+      "type": "Legendary",
+      "passive": "Put yourself in stasis for 2.5 seconds, rendering you untargetable and invulnerable for the duration but also unable to move, \ndeclare basic attacks, cast abilities, use summoner spells, or activate items (120 second cooldown).",
+      "abilityPower": 80,
+      "armor": 45,
+      "cooldownReduction": 15
     },
     {
-      "nazwa": "morello",
-      "typ": "Legendarny",
-      "pasywka": "Redukujesz leczenie przeciwnika po trafieniu umiejętnością",
-      "mocUmiejetnosci": 90,
+      "name": "morello",
+      "type": "Legendary",
+      "passive": "Dealing magic damage to enemy champions inflicts them with Grievous Wounds for 3 seconds.",
+      "abilityPower": 90,
       "hp": 200,
-      "pktPrzebiciaOdpornosciNaMagie": 10
+      "magicResistancePenetration": 10
     },
     {
-      "nazwa": "skupienie horyzentalne",
-      "typ": "Legendarny",
-      "pasywka": "Po trafieniu umiejętnością z minimum, 700jednostek zadajesz dodatkowe obrażenia",
-      "mocUmiejetnosci": 100,
+      "name": "horizon focus",
+      "type": "Legendary",
+      "passive": " Dealing ability damage to a champion with an ability that is neither unit-targeted nor auto-targeted at more than 700 units away\n or slowing, immobilizing or polymorphing them reveals them and increases your damage dealt to them by 10% for 6 seconds",
+      "abilityPower": 100,
       "hp": 150,
-      "przyspieszenieUmiejetnosci": 15
+      "cooldownReduction": 15
     },
     {
-      "nazwa": "demoniczny uscisk",
-      "typ": "Legendarny",
-      "pasywka": "Pali przeciwnikow",
-      "mocUmiejetnosci": 75,
+      "name": "demonic embrace",
+      "type": "Legendary",
+      "passive": "Dealing ability damage curses enemies, causing them to take「 (Melee 6.4% / Ranged 4%) of their maximum health as total magic damage over 4 seconds, capped at 400 against monsters.",
+      "abilityPower": 75,
       "hp": 350
     },
     {
-      "nazwa": "szczelinotworca",
-      "typ": "Mityczny",
-      "pasywka": "Za każdą sekunde w walce zadajesz dodatkowe obrażenia",
-      "mocUmiejetnosci": 70,
+      "name": "night harvester",
+      "type": "Mythic",
+      "passive": "Damaging an enemy champion deals 125 (+ 15% AP) bonus magic damage and grants you 25% bonus movement speed for 1.5 seconds, \nwith the duration extending on subsequent triggers (30 (per champion) second cooldown).",
+      "abilityPower": 130,
       "hp": 300,
-      "przyspieszenieUmiejetnosci": 15
+      "cooldownReduction": 25
     },
     {
-      "nazwa": "nocny zniwiarz",
-      "typ": "Mityczny",
-      "pasywka": "Zadawanie obrażeń bohaterom zadaje dodatkowe obrażenia",
-      "mocUmiejetnosci": 130,
-      "hp": 300,
-      "przyspieszenieUmiejetnosci": 25
-    },
-    {
-      "nazwa": "szczelinotworca",
-      "typ": "Legendarny",
-      "pasywka": "Pali przeciwników zadając obrażenia",
-      "mocUmiejetnosci": 80,
+      "name": "riftmaker",
+      "type": "Legendary",
+      "passive": "For each second in combat with champions, deal 3% increased damage, stacking up to 3 times for a maximum of 9%. \nWhile this effect is fully stacked, convert 100% of the increased damage into true damage.",
+      "abilityPower": 80,
       "mana": 600,
-      "przyspieszenieUmiejetnosci": 20
+      "cooldownReduction": 20
     },
     {
-      "nazwa": "rozdzka zniszczenia",
-      "typ": "Zwykły",
-      "pasywka": "Zwykle różdzka",
-      "mocUmiejetnosci": 40
+      "name": "blasting wand",
+      "type": "Norm al",
+      "passive": "Zwykle różdzka",
+      "abilityPower": 40
     },
     {
-      "nazwa": "buty",
-      "typ": "buty",
-      "predkoscRuchu": 25
+      "name": "boots of speed",
+      "type": "Boots",
+      "movementSpeed": 25
     },
     {
-      "nazwa": "buty predkosci",
-      "typ": "Buty",
-      "pasywka": "Efekty spowalniające prędkości ruchu są osłabiane o 25%",
-      "predkoscRuchu": 60
+      "name": "boots of swiftness",
+      "type": "Boots",
+      "passive": "Gain 25% Tenacity",
+      "movementSpeed": 60
     },
     {
-      "nazwa": "ionanskie buty jasnosci umyslu",
-      "typ": "Buty",
-      "pasywka": "Zyskujesz 12 jedn. przyśpieszenia czarów przywoływacza",
-      "predkoscRuchu": 45,
-      "przyspieszenieUmiejetnosci": 20
+      "name": "ionian boots of lucidity",
+      "type": "Boots",
+      "passive": "Gain 12CD",
+      "movementSpeed": 45,
+      "cooldownReduction": 20
     },
     {
-      "nazwa": "buty mobilnosci",
-      "typ": "Buty",
-      "pasywka": "Gdy przebywasz poza walką conajmniej 5 sekund zyskujesz dodatkowo 115 prędkości ruchu",
-      "predkoscRuchu": 25
+      "name": "boots of mobility",
+      "type": "Boots",
+      "passive": "Gain additional 125 movement speed if you weren't in fight for 5 seconds",
+      "movementSpeed": 25
     },
     {
-      "nazwa": "pancerniaki",
-      "typ": "Buty",
-      "pasywka": "Zmniejsza obrażenia otrzymywane od ataków o 12%",
-      "predkoscRuchu": 45,
-      "pancerz": 50
+      "name": "ninja tabi",
+      "type": "Boots",
+      "passive": "Decrease damage from autoattacks by 12%",
+      "movementSpeed": 45,
+      "armor": 50
     },
     {
-      "nazwa": "obuwie maga",
-      "typ": "Buty",
-      "pasywka": "Buty zwiększające przebicie magiczne",
-      "predkosc ruchu": 45,
-      "pktPrzebiciaOdpornosciNaMagie": 18
+      "name": "sorcerer shoes",
+      "type": "Boots",
+      "passive": "Increase magic penetration",
+      "movementSpeed": 45,
+      "magicResistancePenetration": 18
     },
     {
-      "nazwa": "nagolenniki berserkera",
-      "typ": "Buty",
-      "pasywka": "Buty zwiększające attack speed",
-      "predkoscRuchu": 45,
-      "predkoscAtakuBonus": 1.45
+      "name": "berserker greaves",
+      "type": "Boots",
+      "passive": "Increase attack speed",
+      "movementSpeed": 45,
+      "attackSpeed": 1.45
     },
     {
-      "nazwa": "plomien cienia",
-      "typ": "Legendarny",
-      "pasywka": "Obrażenia zadawane bohaterom zyskują dodatkowe przebicie odporności na magie w zależności od aktualnego zdrowia celu",
-      "mocUmiejetnosci": 100,
+      "name": "shadowflame",
+      "type": "Legendary",
+      "passive": "  Dealing magic damage to champions ignores 10 − 20 (based on target's current health) of their magic resistance.",
+      "abilityPower": 100,
       "hp": 200
     },
     {
-      "nazwa": "kosmiczny puls",
-      "typ": "Legendarny",
-      "pasywka": "Zadawanie obrażeń bohaterom za pomocą min 3 umiejętności lub zaklęć zapewnia dodatkową prędkość ruchu oraz moc umiejętności aż do zakończenia walki z przeciwnikiem",
-      "mocUmiejetnosci": 65,
+      "name": "cosmic drive",
+      "type": "Legendary",
+      "passive": "After dealing 3 instances of damage from basic attacks or ability damage to champions within 3 seconds, \ngain 15% bonus movement speed, decaying to 5% over 2 seconds, and 40 ability power for 5 seconds, refreshing on damage dealt to champions though not resetting the effect.",
+      "abilityPower": 65,
       "hp": 200,
-      "przyspieszenieUmiejetnosci": 30,
+      "cooldownReduction": 30,
       "skalowanieRuchu": 0.05
     },
     {
-      "nazwa": "nawalnica luden",
-      "typ": "Mityczny",
-      "pasywka": "Umiejętności zadają obrażenia magiczne celowi i trzem pobliskim wrogom, oraz zapewniają Ci prędkość ruchu \nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom Przebicie odporności na magie",
-      "mocUmiejetnosci": 80,
-      "pktPrzebiciaOdpornosciNaMagie": 6,
+      "name": "luden tempest",
+      "type": "Mythic",
+      "passive": "Dealing ability damage to an enemy deals 100 (+ 10% AP) additional magic damage to them and launches orbs at up to 3 other enemies",
+      "abilityPower": 80,
+      "magicResistancePenetration": 6,
       "mana": 600,
-      "przyspieszenieUmiejetnosci": 20
+      "cooldownReduction": 20
     },
     {
-      "nazwa": "ostrze nieskonczonosci",
-      "typ": "Legendarny",
-      "pasywka": "Jeżeli masz conajmniej 40% na krytyka, zyskujesz 35% dodatkowych obrażeń trafienia krytycznego",
-      "obrazeniaOdAtaku": 70,
-      "szansaNaTrafienieKrytyczne": 1.2
+      "name": "infinity edge",
+      "type": "Legendary",
+      "passive": "Gain 35% bonus critical strike damage if you have at least 40% critical strike chance.",
+      "physicalDamage": 70,
+      "critChance": 1.2
     },
     {
-      "nazwa": "calun banshee",
-      "typ": "Legendarny",
-      "pasywka": "Zapewnia tarcze magii, która blokuje następną wrogą umiejętność",
-      "mocUmiejetnosci": 80,
-      "odpornoscNaMagie": 45,
-      "przyspieszenieUmiejetnosci": 10
+      "name": "banshee veil",
+      "type": "Legendary",
+      "passive": "Grants a spell shield that blocks the next hostile ability (40 (restarts upon taking damage from champions) second cooldown).",
+      "abilityPower": 80,
+      "magicResistance": 45,
+      "cooldownReduction": 10
     }
 
   ]

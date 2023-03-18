@@ -3,14 +3,14 @@
  * Klasa odpowiedzialna za reprezentowanie poziomu umiejętności skilli, zawiera ona konstruktor oraz kilka metod instancyjnych
  * dodatkowo  gettery
  */
-public class BazoweObrazenia {
+public class Base_Damage {
     private int lvl1;
     private int lvl2;
     private int lvl3;
     private int lvl4;
     private int lvl5;
 
-    public BazoweObrazenia(int lvl1, int lvl2, int lvl3, int lvl4, int lvl5) {
+    public Base_Damage(int lvl1, int lvl2, int lvl3, int lvl4, int lvl5) {
         this.lvl1 = lvl1;
         this.lvl2 = lvl2;
         this.lvl3 = lvl3;
