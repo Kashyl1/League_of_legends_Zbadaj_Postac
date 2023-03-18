@@ -1,8 +1,8 @@
 
 
 /**
- * Klasa odpowiedzialna za statystyki naszej postaci, zawiera ona prywatne pola, reprezentujące postać oraz gettery
- * i settery odpowiedzialne za pobieranie informacji na temat postaci
+ * The class responsible for the statistics of our character, it contains private fields representing the character and getters
+ * and setters responsible for retrieving information about the character
  */
 public class Statistics {
     private int hp;
@@ -103,10 +103,6 @@ public class Statistics {
     public void setMovementSpeed(int movementSpeed) {
         this.movementSpeed = movementSpeed;
     }
-
-    /**
-     * Metoda toString zwracająca łańcuch znaków informacji o postaci
-     */
     public String toString() {
         return "HP: " + getHp() +
                 "\nMana: " + getMana() +

@@ -2,7 +2,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Klasa ta zawiera instancje reprezentujące naszą postać oraz wykorzystuje adnotacje Jacksona w konstruktorze
+ * This class contains instances representing our character and uses Jackson's annotations in the constructor
  */
 public class Champion {
     private final String name;
@@ -20,9 +20,9 @@ public class Champion {
 
 
     /**
-     * Konstruktor klasy, który zostaje wywoływany podczas deserializacji obiektu z JSONA,
-     * dodatkowo każdy argument w konstruktorze jest oznaczony jako @JsonProperty, ponieważ jest on używany
-     * w JSONie do identyfikacji wartości której odpowiada.
+     * Class constructor, which is called when deserializing an object from JSON,
+     * additionally, each argument in the constructor is marked with @JsonProperty as it is used
+     * in JSON to identify the value it corresponds to.
      */
     @JsonCreator
     public Champion(@JsonProperty("name") String name,

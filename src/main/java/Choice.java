@@ -1,5 +1,5 @@
 /**
- * Enum odpowiedzialny za komendy, których użytkownik korzystający z aplikacji będzie używać
+ * Enum responsible for the commands that the user using the application will use
  */
 public enum Choice {
     CONTINUE(null, null),
@@ -38,35 +38,29 @@ public enum Choice {
             -passive
             -scaling
             ------------------------------------------------------------------------------------------------------------
-            Małe i duże litery nie mają znaczenia, NIE UŻYWAJ POLSKICH ZNAKÓW!
-            Przyklad:\s
+            Small and capital letters do not matter
+            I.E.:\s
             hp
             passive
-            Obrazenia od ataku
+            Physical damage
             statistics"""),
-    CHAMPIONS("/show champs", "Powyżej znajdują się postacie z bazy danych, do których możesz uzyskać dostęp"),
-    ITEMS("/show items", "Powyżej znajdują się przedmoty z bazy danych, do których możesz uzyskać dostęp"),
-    EXIT("/exit", "Żegnaj przywoływaczu!"),
-    ENEMY_CHOICE("/enemy choice", "Wybierz swojego przeciwnika z postaci dostępnych w bazie danych"),
-    RANDOM_OPPONENT("/enemy random", "O to wylosowany przeciwnik!"),
-    TRAINING_DUMMY("/training", "Stwórz kukłe!"),
-    RETURN("/return", "");
+    CHAMPIONS("/show champs", "Above are the characters from the database you can access"),
+    ITEMS("/show items", "Above are items from the database that you can access"),
+    EXIT("/exit", "Goodbye Summoner!"),
+    ENEMY_CHOICE("/enemy choice", "Choose your opponent from the characters available in the database"),
+    RANDOM_OPPONENT("/enemy random", "That's the chosen opponent!"),
+    TRAINING_DUMMY("/training", "Create a dummy!"),
+    RETURN("/return", null);
 
     final String option;
     final String message;
 
-    /**
-     * Konstruktor klasy
-     */
+
     Choice(String option, String message) {
         this.option = option;
         this.message = message;
     }
 
-    /**
-     * Metoda sprawdzająca czy użytkownik użył dobrej komendy
-     * @return
-     */
     public static Choice get(String input) {
         for (Choice r : Choice.values()) {
             if (input.equalsIgnoreCase(r.option)) {
@@ -76,10 +70,6 @@ public enum Choice {
         return input.startsWith("/") ? UNKNOWN_COMMAND : CONTINUE;
     }
 
-    /**
-     * Metoda zwracająca wiadomość w zależnosci od opcji którą użytkownik wybrał
-     * @return
-     */
     public String getMessage() {
         return message;
     }

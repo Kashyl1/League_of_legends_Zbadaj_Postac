@@ -1,11 +1,11 @@
 
 /**
- * Enum odpowiedzialny za szukanie errorów
+ * Enum responsible for searching for errors
  */
 public enum ERROR {
-    INVALID_CHARACTER("Nie ma takiej postaci w bazie danych o nazwie: "),
-    INVALID_ITEM("Nie ma takiego przedmiotu w bazie danych o nazwie: "),
-    UNKNOWN_COMMAND("Nie ma takiej komendy");
+    INVALID_CHARACTER("There is no such champion in the database named: "),
+    INVALID_ITEM("There is no such item in the database named: "),
+    UNKNOWN_COMMAND("Unknown command");
 
     private final String message;
 

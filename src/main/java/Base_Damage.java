@@ -1,7 +1,6 @@
 
 /**
- * Klasa odpowiedzialna za reprezentowanie poziomu umiejętności skilli, zawiera ona konstruktor oraz kilka metod instancyjnych
- * dodatkowo  gettery
+ * The class responsible for representing the skill level contains a constructor and several instance methods
  */
 public class Base_Damage {
     private int lvl1;

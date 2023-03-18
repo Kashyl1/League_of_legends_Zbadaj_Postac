@@ -1,7 +1,4 @@
 
-/**
- * Klasa ta jest odpowiedzialna za umiejętności która nasza postać posiada,zawiera ona prywatne instancje oraz gettery i settery
- */
 public class Skill {
     private String name;
     private String description;
