@@ -3,7 +3,7 @@ public enum Informations {
             The program currently only works for magic characters PATCH: 13.5
             """),
     MAIN_OPTIONS("""
-            Komendy:
+            Commands:
             "/show champs" - To display all the characters in the database                               
             "/show items" - To display all the items in the database                         
             "/hero" - To go to champ select
@@ -18,7 +18,7 @@ public enum Informations {
             "/duel" - To go to duel and check damage                  
             "/exit" - To turn off Application"""),
     DAMAGE_TEST("""
-            Komendy:
+            Commands:
             "/enemy choice" - To choose an opponent (Not implemented yet)
             "/enemy random" - To random choose your opponent (Not implemented yet)
             "/training" - To create Dummy
@@ -42,7 +42,7 @@ public enum Informations {
     CHAMPION_PICK("Character selected: "),
     ITEM_PICK("Item selected: "),
     ITEMS_INFO("""
-            Komendy:
+            Commands:
             "/show items" - To display all items
             "/equip" - To equip items
             "/show inventory" - To see your inventory          
