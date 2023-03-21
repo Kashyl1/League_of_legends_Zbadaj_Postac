@@ -1,42 +1,262 @@
 # League_of_legends_Zbadaj_Postac
 
-Program ten pozwala obejrzeć postać bądź przedmioty z gry League of legends, a następnie np. zbadać obrażenia umiejętności bohatera w zależności od odporności na magie przeciwnika.
-Na ten moment jest 12 magicznych postaci, użytkownik może obejrzeć ich statystyki na jakimkolwiek poziomie 1-18, oraz zakładać/zdejmować przedmioty których jest 25 by zwiększać
-statystyki postaci.
-
-Przykłady działania programu:
-
-1) Oglądanie przedmiotów:
-
-![image](https://user-images.githubusercontent.com/92478936/224482513-b2834256-f290-450c-9d51-99b606389223.png)
-![image](https://user-images.githubusercontent.com/92478936/224482546-89e8b8f5-4189-45d3-8b9b-a1c6fdd563b7.png)
+A Java console application.
+This program allows you to view a character or items from the game League of legends, and then for example examine the damage of the hero's skills depending on the opponent's magic resistance.
+At the moment there are 12 magical characters, the user can view their stats at level 1-18, and equip/remove items of which there are 25 to increase
+character stats.
 
 
-2) Levelowanie postaci
 
-![image](https://user-images.githubusercontent.com/92478936/224482568-0cc2cde9-da22-489d-934e-ab6f122e47bf.png)
 
-Różnica między pierwszym poziomem a 18:
+Sample application session:
+```
+The program currently only works for magic characters PATCH: 13.5
 
-![image](https://user-images.githubusercontent.com/92478936/224482620-a7707352-f166-4d2d-982f-47ea36e53ca7.png)
+Commands:
+"/show champs" - To display all the characters in the database
+"/show items" - To display all the items in the database
+"/hero" - To go to champ select
+"/item" - To go to item select
+"/exit" - To turn off Application
+/show champs
 
-![image](https://user-images.githubusercontent.com/92478936/224482596-ae5bd376-4427-4949-af3e-e3ea4d02d7ff.png)
+Diana, Vex, Xerath, Evelynn
+Lissandra, Annie, Ryze, Ahri
+Veigar, Orianna, Kassadin, Anivia
 
-Każda postać oczywiście skaluje się inaczej, więc dla każdego bohatera te wartości będą różne
+Above are the characters from the database you can access
+Commands:
+"/show champs" - To display all the characters in the database
+"/show items" - To display all the items in the database
+"/hero" - To go to champ select
+"/item" - To go to item select
+"/exit" - To turn off Application
+/hero
+Choose your champion!
+Diana
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+/champion option
+You can display:
+All general information about the hero's stats and skills by typing:
+------------------------------------------------------------------------------------------------------------
+-all
+-name
+-Level
+-Statistics
+-HP
+-Mana
+-Physical damage
+-Ability power
+-Attack speed
+-Crit chance
+-Magic resistance
+-Armor
+-CDR             (Cooldown reduction)
+-Movement speed
+-Skills
+-Q
+-W
+-E
+-R
+-passive
+-scaling
+------------------------------------------------------------------------------------------------------------
+Small and capital letters do not matter
+I.E.: 
+hp
+passive
+Physical damage
+statistics
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+statistics
+HP: 640
+Mana: 375
+Physical Damage: 57
+Power ability: 0
+Attack speed: 0.72
+Crit chance: 0.0
+Magic resistance: 0
+Armor: 31
+Cooldown reduction: 0.0
+Movement speed: 345
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+/level
+Pick hero level 1-18
+Input "/return" to return or
+Enter a number from 1 to 18:
+18
 
-3) Sprawdzanie obrażeń
+You have successfully changed your character's level! The current level is: 18
 
-a)
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+statistics
+HP: 2493
+Mana: 800
+Physical Damage: 108
+Power ability: 0
+Attack speed: 1.0889
+Crit chance: 0.0
+Magic resistance: 34
+Armor: 104
+Cooldown reduction: 0.0
+Movement speed: 345
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+/inventory
+Commands:
+"/show items" - To display all items
+"/equip" - To equip items
+"/show inventory" - To see your inventory
+"/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
+"/return" - To return
+"/exit" - To turn off Application
+/show items
 
-![image](https://user-images.githubusercontent.com/92478936/224482673-d50085ea-ca3f-4dbe-9938-7f8aedae9362.png)
+hextech rocketbelt, rylai crystal scepter, crown of the shattered queen, everfrost
+archangel staff, zhonya hourglass, morello, horizon focus
+demonic embrace, night harvester, riftmaker, blasting wand
+boots of speed, boots of swiftness, ionian boots of lucidity, boots of mobility
+ninja tabi, sorcerer shoes, berserker greaves, shadowflame
+cosmic drive, luden tempest, infinity edge, banshee veil
 
-b)
+Above are items from the database that you can access
+Commands:
+"/show items" - To display all items
+"/equip" - To equip items
+"/show inventory" - To see your inventory
+"/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
+"/return" - To return
+"/exit" - To turn off Application
+/equip
+Input item name!
+riftmaker
+Item selected: riftmaker
+Name: riftmaker
+Type: Legendary
+Passive: For each second in combat with champions, deal 3% increased damage, stacking up to 3 times for a maximum of 9%. 
+While this effect is fully stacked, convert 100% of the increased damage into true damage.
+abilityPower: 80
+cooldownReduction: 20.0
+mana: 600
 
-![image](https://user-images.githubusercontent.com/92478936/224482686-b7580d79-5d2d-4fa0-b78c-b00c195a7c3d.png)
+Commands:
+"/show items" - To display all items
+"/equip" - To equip items
+"/show inventory" - To see your inventory
+"/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
+"/return" - To return
+"/exit" - To turn off Application
+/show inventory
+Champion inventory Diana:
+Name: riftmaker
+Type: Legendary
+Commands:
+"/show items" - To display all items
+"/equip" - To equip items
+"/show inventory" - To see your inventory
+"/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
+"/return" - To return
+"/exit" - To turn off Application
+/return
+Character selected: Diana
+Choose what you want to do, or enter:
+"/champion option" - To show options for champion
+"/return" - To undo
+"/level" - To level up hero
+"/inventory" - To equip items
+"/duel" - To go to duel and check damage
+"/exit" - To turn off Application
+/duel
+Commands:
+"/enemy choice" - To choose an opponent (Not implemented yet)
+"/enemy random" - To random choose your opponent (Not implemented yet)
+"/training" - To create Dummy
+"/show champs" - To display all champions
+"/return" - To return
+"/exit" - To turn off Application
+/training
+Enter an integer representing the dummy's magic resistance
+50
+HP: 15
+Armor: 15
+Magic resistance: 50
+The pattern for entering the skills we want to test:
+(letter number letter number letter number letter number)
+The string can be up to 8 characters long and must contain the same number of letters as numbers
+The level is the number you enter after the skill letter
+Letters can be: Q W E R, where:
+Q - First ability (max level 5)
+W - Second ability (max level 5)
+E - Third ability (max level 5)
+R - Fourth ability (max level 3)
+An example pattern when we want to check the damage of 3 skills:
+Q 4 R 2 W 3
 
-c)
+Q 5 W 5 E 5 R 3
+A valid string has been entered: Q 5 W 5 E 5 R 3
+Enemy magic resistance: 50
+Ability: Crescent Strike (Q)
+Lvl 5 Damage: 200
+Ability: Moonfall (R)
+Lvl 3 Damage: 400
+Ability: Lunar Rush (E)
+Lvl 5 Damage: 130
+Ability: Pale Cascade (W)
+Lvl 5 Damage: 198
+Combined damage: 928
+Commands:
+"/enemy choice" - To choose an opponent (Not implemented yet)
+"/enemy random" - To random choose your opponent (Not implemented yet)
+"/training" - To create Dummy
+"/show champs" - To display all champions
+"/return" - To return
+"/exit" - To turn off Application
+/return
+Commands:
+"/show champs" - To display all the characters in the database
+"/show items" - To display all the items in the database
+"/hero" - To go to champ select
+"/item" - To go to item select
+"/exit" - To turn off Application
+/exit
+Goodbye Summoner!
+```
 
-![image](https://user-images.githubusercontent.com/92478936/224482707-59d01730-c842-45b4-a229-84e5fda2e055.png)
 
-Oraz wiele więcej możliwości, każdy krok jest dokładnie opisany więc spróbuj samemu odpalić program, gwarantuje że się nie zgubisz.
+
+
 
