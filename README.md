@@ -19,7 +19,8 @@ Commands:
 "/hero" - To go to champ select
 "/item" - To go to item select
 "/exit" - To turn off Application
-/show champs
+
+> /show champs
 
 Diana, Vex, Xerath, Evelynn
 Lissandra, Annie, Ryze, Ahri
@@ -32,9 +33,12 @@ Commands:
 "/hero" - To go to champ select
 "/item" - To go to item select
 "/exit" - To turn off Application
-/hero
+
+> /hero
+
 Choose your champion!
-Diana
+
+> Diana
 Character selected: Diana
 Choose what you want to do, or enter:
 "/champion option" - To show options for champion
@@ -43,7 +47,9 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-/champion option
+
+> /champion option
+
 You can display:
 All general information about the hero's stats and skills by typing:
 ------------------------------------------------------------------------------------------------------------
@@ -74,7 +80,6 @@ I.E.:
 hp
 passive
 Physical damage
-statistics
 Character selected: Diana
 Choose what you want to do, or enter:
 "/champion option" - To show options for champion
@@ -83,7 +88,9 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-statistics
+
+> statistics
+
 HP: 640
 Mana: 375
 Physical Damage: 57
@@ -102,11 +109,14 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-/level
+
+> /level
+
 Pick hero level 1-18
 Input "/return" to return or
 Enter a number from 1 to 18:
-18
+
+> 18
 
 You have successfully changed your character's level! The current level is: 18
 
@@ -118,7 +128,9 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-statistics
+
+> statistics
+
 HP: 2493
 Mana: 800
 Physical Damage: 108
@@ -137,7 +149,9 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-/inventory
+
+> /inventory
+
 Commands:
 "/show items" - To display all items
 "/equip" - To equip items
@@ -145,7 +159,8 @@ Commands:
 "/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
 "/return" - To return
 "/exit" - To turn off Application
-/show items
+
+> /show items
 
 hextech rocketbelt, rylai crystal scepter, crown of the shattered queen, everfrost
 archangel staff, zhonya hourglass, morello, horizon focus
@@ -162,9 +177,13 @@ Commands:
 "/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
 "/return" - To return
 "/exit" - To turn off Application
-/equip
+
+> /equip
+
 Input item name!
-riftmaker
+
+> riftmaker
+
 Item selected: riftmaker
 Name: riftmaker
 Type: Legendary
@@ -181,7 +200,9 @@ Commands:
 "/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
 "/return" - To return
 "/exit" - To turn off Application
-/show inventory
+
+> /show inventory
+
 Champion inventory Diana:
 Name: riftmaker
 Type: Legendary
@@ -192,7 +213,9 @@ Commands:
 "/remove item" - To remove item (Uppercase and lowercase letters are distinguished!)
 "/return" - To return
 "/exit" - To turn off Application
-/return
+
+> /return
+
 Character selected: Diana
 Choose what you want to do, or enter:
 "/champion option" - To show options for champion
@@ -201,7 +224,9 @@ Choose what you want to do, or enter:
 "/inventory" - To equip items
 "/duel" - To go to duel and check damage
 "/exit" - To turn off Application
-/duel
+
+> /duel
+
 Commands:
 "/enemy choice" - To choose an opponent (Not implemented yet)
 "/enemy random" - To random choose your opponent (Not implemented yet)
@@ -209,9 +234,13 @@ Commands:
 "/show champs" - To display all champions
 "/return" - To return
 "/exit" - To turn off Application
-/training
+
+> /training
+
 Enter an integer representing the dummy's magic resistance
-50
+
+> 50
+
 HP: 15
 Armor: 15
 Magic resistance: 50
@@ -227,7 +256,8 @@ R - Fourth ability (max level 3)
 An example pattern when we want to check the damage of 3 skills:
 Q 4 R 2 W 3
 
-Q 5 W 5 E 5 R 3
+> Q 5 W 5 E 5 R 3
+
 A valid string has been entered: Q 5 W 5 E 5 R 3
 Enemy magic resistance: 50
 Ability: Crescent Strike (Q)
@@ -246,14 +276,18 @@ Commands:
 "/show champs" - To display all champions
 "/return" - To return
 "/exit" - To turn off Application
-/return
+
+> /return
+
 Commands:
 "/show champs" - To display all the characters in the database
 "/show items" - To display all the items in the database
 "/hero" - To go to champ select
 "/item" - To go to item select
 "/exit" - To turn off Application
-/exit
+
+> /exit
+
 Goodbye Summoner!
 ```
 
