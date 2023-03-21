@@ -5,10 +5,11 @@ This program allows you to view a character or items from the game League of leg
 At the moment there are 12 magical characters, the user can view their stats at level 1-18, and equip/remove items of which there are 25 to increase
 character stats.
 
+# Technologies Used
+-Java
 
 
-
-Sample application session:
+# Sample application session:
 ```
 The program currently only works for magic characters PATCH: 13.5
 
